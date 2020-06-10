@@ -1,11 +1,27 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title OurTask
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .title-bar
+      .title-box
+        .title-box-inner
+          .title-name
+            our task
+          %ul.user-sign-in
+            %li
+              %a(href="#")
+                .new Sign up
+            %li
+              %a(href="#")
+                .log-in Log In
     = yield
+%footer
+  Copyright
+  %span.copyright © 
+  2020 our task All Rights Reserved.
