@@ -1,10 +1,10 @@
 .contents.row
   .container
-    = form_with(model: @task, local: true) do |form|
+    = form_with(model: @task, local: true) do |f|
       %h3
         Share task
-      = form.text_field :name, placeholder: "name", required: ""
-      = form.text_area :task, placeholder: "task" , rows: "10", required: ""
+      = f.text_field :name, placeholder: "name", required: ""
+      = f.text_area :task, placeholder: "task" , rows: "10", required: ""
       %div
-      = form.date_field :limit_date, required: ""
-      = form.submit "SEND"
+      = f.date_field :limit_date, required: ""
+      = f.submit "SEND"

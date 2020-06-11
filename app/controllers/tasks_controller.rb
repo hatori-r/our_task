@@ -14,6 +14,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = task.find(params[:id])
   end
 
   def update
@@ -25,13 +26,13 @@ class TasksController < ApplicationController
     task.limit_date = params[:limit_date]
     task.save
 
-    redirect_to '/tasks', notice: 'タスクを更新しました。'
+    redirect_to '/', flash: {notice: 'タスクを更新しました。'}
   end
 
   def destroy
     task = Task.find(params[:id])
     task.destroy
-    redirect_to '/tasks', notice: 'タスクを削除しました。'
+    redirect_to '/tasks', flash: {notice: 'タスクを削除しました。'}
   end
 
   def show

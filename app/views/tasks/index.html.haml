@@ -50,7 +50,8 @@
           .task-upper
             .task TASK
             .task-data
-              .task-data-inner= t.task
+              %a(href="#")
+                .task-data-inner= t.task
               .created-date= t.created_at.to_s(:datetime)
       .other-box
         %ul
