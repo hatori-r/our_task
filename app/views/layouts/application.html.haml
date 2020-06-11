@@ -12,7 +12,8 @@
       .title-box
         .title-box-inner
           .title-name
-            our task
+            %a(href="/")
+              .our-task our task
           %ul.user-sign-in
             %li
               %a(href="#")
@@ -20,8 +21,12 @@
             %li
               %a(href="#")
                 .log-in Log In
+    .posting
+      = flash[:notice]
     = yield
 %footer
   Copyright
   %span.copyright © 
   2020 our task All Rights Reserved.
+  %a(href="#")
+    %i.far.fa-caret-square-up

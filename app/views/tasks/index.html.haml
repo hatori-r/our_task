@@ -23,7 +23,7 @@
   .main-table
     %ul
       %li
-        %a(href="#")
+        %a(href="/tasks/new")
           .post-task Share task
       %li
         %a(href="#")
@@ -37,6 +37,9 @@
           %li
             %a(href="#")
               .user-name= t.name
+          %li.details
+            %a{href: "#"}
+              .ellipsis-h …
       .tasks-box
         .limit-box
           .limit-upper
@@ -47,7 +50,8 @@
           .task-upper
             .task TASK
             .task-data
-              .task-data-inner= safe_join(t.task.split("\n"),tag(:br))
+              .task-data-inner= t.task
+              .created-date= t.created_at.to_s(:datetime)
       .other-box
         %ul
           %li

@@ -5,21 +5,12 @@ class TasksController < ApplicationController
   end
   
   def new
-    task = Task.new
-    task.task = params[:task]
-    task.state = params[:state]
-    task.limit_date = params[:limit_date]
-    task.save
-    redirect_to '/tasks', notice: 'タスクを作成しました。'
+    @task = Task.new
   end
 
   def create
-    task = Task.new
-    task.task = params[:task]
-    task.state = params[:state]
-    task.limit_date = params[:limit_date]
-    task.save
-    redirect_to '/tasks', notice: 'タスクを作成しました。'
+    Task.create(task_params)
+    redirect_to '/', flash: {notice: 'タスクをシェア出来ました。達成に向けて頑張りましょう！'}
   end
 
   def edit
@@ -47,6 +38,11 @@ class TasksController < ApplicationController
     id = params[:id]
     @task = Task.find(id)
     @status = ['todo', 'doing', 'done']
+  end
+
+  private
+  def task_params
+    params.require(:task).permit(:name, :task, :limit_date)
   end
 
 end
