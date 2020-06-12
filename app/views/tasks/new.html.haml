@@ -1,6 +1,6 @@
 .contents.row
   .container
-    = form_with(model: @task, local: true) do |form|
+    = form_with(model: @task, local: true) do |f|
       %h3
         Share task
       = form.text_field :name, placeholder: "name", required: ""
