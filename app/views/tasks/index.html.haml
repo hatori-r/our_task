@@ -1,24 +1,5 @@
 
 
--# %form{action: "/tasks", method: "POST"}
--#   %input{name: "authenticity_token", type: "hidden", value: form_authenticity_token}/
--#   %div
--#     %label(for="task")Task Name
--#     %input#task{name: "task", required: "", type: "text"}/
--#   %div
--#     %select{name: "state"}
--#       - @status.each_with_index do |s,i|
--#         %option{value: s}= s
--#     %label Task State
--#   %div
--#     %input{name: "limit_date", required: "", type: "date"}/
--#     %label Task Limit Day
--#   %p
--#     %button{type: "submit"} create
-
--# - flash.each do |msg|
--#   %p= msg
-
 .tasks
   .main-table
     %ul
@@ -50,8 +31,11 @@
           .task-upper
             .task TASK
             .task-data
-              .task-data-inner= t.task
+              .task-data-inner= simple_format(t.task)
               .created-date= t.created_at.to_s(:datetime)
+              .status-table
+                %a(href="#")
+                  .now-state= t.state
       .other-box
         %ul
           %li
@@ -61,14 +45,3 @@
             %a(href="#")
               %i.far.fa-comment-dots
         .adjustment-box
-
-
--# %table
--#   %tbody
--#     - @tasks.each do |t|
--#       %tr
--#         %td Limit
--#         %td= t.limit_date 
--#         %td= t.name
--#         %td= simple_format(t.task)
--#         %td= t.image

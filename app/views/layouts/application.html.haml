@@ -21,8 +21,10 @@
             %li
               %a(href="#")
                 .log-in Log In
-    .posting
-      = flash[:notice]
+    .notification-ber
+      .notification
+        - flash.each do |key, value|
+          = content_tag :div, value, class: key
     = yield
 %footer
   Copyright
