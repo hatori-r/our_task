@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # devise_for :users
+  devise_for :users
   root to: "tasks#index"
-  resources :tasks, only: [:index, :new, :create, :edit, :update, :destroy, :show] do
-  end
+  resources :tasks
 end

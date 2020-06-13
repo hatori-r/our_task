@@ -1,4 +1,7 @@
 class TasksController < ApplicationController
+  before_action :set_task, only: [:edit, :show]
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @tasks = Task.order("created_at DESC").all
   end
@@ -8,49 +11,52 @@ class TasksController < ApplicationController
   end
 
   def create
-    # Task.create(task_params)
-    @task = Task.new(task_params)
-    if @task.save
-      flash[:success] = "タスクをシェアしました。達成に向けて頑張りましょう！"
+    task = Task.new(task_params)
+    if task.save
+      flash[:new_task] = "タスクをシェアしました。達成に向けて頑張りましょう！"
       redirect_to '/'
     else
       flash.now[:danger] = "送信に失敗しました。もう一度試してみてください。"
       render 'tasks/new'
     end
-    # redirect_to '/', flash: {notice: 'タスクをシェアしました。達成に向けて頑張りましょう！'}
   end
 
   def edit
-    @task = task.find(params[:id])
   end
 
   def update
-    # task = Task.find(params[:id])
-    # task.update(task_params)
-
-    # task.task = params[:task]
-    # task.state = params[:state]
-    # task.limit_date = params[:limit_date]
-    # task.save
-
-    # redirect_to '/tasks', notice: 'タスクを更新しました。'
+    task = Task.find(params[:id])
+    task.update(task_params)
+    if task.save
+      flash[:update_task] = "タスクを更新しました。"
+      redirect_to '/'
+    else
+      flash.now[:danger] = "送信に失敗しました。もう一度試してみてください。"
+      render 'tasks/new'
+    end
   end
 
   def destroy
-    # task = Task.find(params[:id])
-    # task.destroy
-    # redirect_to '/tasks', notice: 'タスクを削除しました。'
+    task = Task.find(params[:id])
+    task.destroy
+    flash[:delete_task] = "タスクを削除しました。"
+    redirect_to '/'
   end
 
   def show
-    # id = params[:id]
-    # @task = Task.find(id)
-    # @status = ['todo', 'doing', 'done']
   end
 
   private
   def task_params
     params.require(:task).permit(:state, :name, :task, :limit_date)
+  end
+
+  def set_task
+    @task = Task.find(params[:id]) 
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 
 end

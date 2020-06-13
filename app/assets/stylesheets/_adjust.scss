@@ -16,6 +16,7 @@ body {
   padding-bottom: 50px;
   margin: 0 auto;
   overflow: auto;
+  position: relative;
 }
 
 .title-bar {
@@ -52,17 +53,20 @@ body {
 
 .user-sign-in {
   background: #41B883;
-  width: 180px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
 }
 
 .new,
 .log-in {
+  width: 90px;
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
   color: #f5f5f5;
   background: #41B883;
+  display: block;
 }
 
 .new:hover {
@@ -73,16 +77,40 @@ body {
   color: #35495E;
 }
 
-.success {
+.new_task {
   background: #64cffa;
-  height: 45px;
+  height: 40px;
   width: 100%;
-  line-height: 45px;
+  line-height: 40px;
   text-align: center;
   letter-spacing: 0.1em;
   font-size: 20px;
+  text-shadow: 1px 1px 5px #7e7e7e;
   color: #f5f5f5;
-  z-index: 1;
+}
+
+.update_task {
+  background: #fabe19;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-size: 20px;
+  text-shadow: 1px 1px 5px #7e7e7e;
+  color: #f5f5f5;
+}
+
+.delete_task {
+  background: #f05b47;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-size: 20px;
+  text-shadow: 1px 1px 5px #5c5c5c;
+  color: #f5f5f5;
 }
 
 footer {
@@ -96,6 +124,7 @@ footer {
   text-align: center;
   position: fixed;
   bottom: 0;
+  z-index: 2;
 }
 
 .copyright {

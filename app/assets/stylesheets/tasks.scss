@@ -47,7 +47,7 @@
   min-height: 100vh;
   width: calc(100% - 200px);
   max-width: 880px;
-  min-width: 830px;
+  min-width: 820px;
   margin: 0 auto;
 }
 
@@ -95,20 +95,20 @@
 }
 
 .details {
+  width: 41px;
   position: absolute;
   top: 0;
-  right: 49.5px;
+  right: 53px;
 }
 
-.ellipsis-h {
+.details a {
   background: #fff;
-  height: 100%;
-  width: 50px;
   color: #888;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  line-height: 45px;
+  line-height: 41px;
   text-align: center;
+  display: block;
 }
 
 .ellipsis-h:hover {
@@ -241,7 +241,6 @@
   padding-top: 5px;
 }
 
-
 .fa-thumbs-up,
 .fa-comment-dots {
   background: #fff;
@@ -272,4 +271,20 @@
 .state-table {
   height: 260px;
   width: 30px;
+}
+
+.side-ber {
+  background: pink;
+  height: 500px;
+  width: 300px;
+  z-index: 1;
+  position: absolute;
+  top: 262px;
+  right: 80px;
+}
+
+@media screen and (max-width: 1580px) {
+  .side-ber {
+    display: none;
+  }
 }
