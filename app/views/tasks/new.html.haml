@@ -3,7 +3,8 @@
     = form_with(model: @task, local: true) do |f|
       %h3
         Share task
-      = f.text_field :name, placeholder: "name", required: ""
+      = current_user.nickname
+      さん
       = f.text_area :task, placeholder: "task" , rows: "10", required: ""
       = f.select :state, [['New', 'New'], ['Doing', 'Doing'], ['Completed!', 'Completed!'], ['Failure', 'Failure']], { selected: 'New', selected: 1, required: "" } 
       %label Task State

@@ -1,12 +1,16 @@
 .tasks
   .main-table
     %ul
-      %li
-        %a(href="/tasks/new")
-          .post-task Share task
-      %li
-        %a(href="#")
-          .my-page My page
+      - if user_signed_in?
+        %li
+          = link_to "Share task", "/tasks/new", class: "post-task"
+        %li
+          = link_to "My task", "/users/#{current_user.id}", class: "my-page"
+      - else
+        %li
+          = link_to "Share task", new_user_session_path, class: "post-task"
+        %li
+          = link_to "Sing up", new_user_registration_path, class: "my-page"
   - @tasks.each do |t|
     .tasks-table
       .task-user
@@ -14,8 +18,8 @@
           %li
             %i.far.fa-user-circle
           %li
-            %a(href="#")
-              .user-name= t.name
+            %a.user-mame{href: "/users/#{t.user.id}"}
+              %span.user-name= t.user.nickname
           %li.details
             = link_to '…', "/tasks/#{t.id}/edit"
       .tasks-box
@@ -31,8 +35,9 @@
               .task-data-inner= simple_format(t.task)
               .created-date= t.created_at.to_s(:datetime)
               .status-table
-                %a(href="#")
+                %a(href="/tasks/#{t.id}/edit")
                   .now-state= t.state
+
       .other-box
         %ul
           %li

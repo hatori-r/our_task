@@ -50,7 +50,7 @@
 -#         = link_to task_path(t.id), method: :get, class: "fa-comment-dots" do
 -#           = icon('far', 'fa-comment-dots')
 -#       .adjustment-box
-= @task.name
+= @task.user.nickname
 = @task.limit_date
 = @task.task
 = @task.state

@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @tasks = Task.order("created_at DESC").all
+    # @tasks = Task.order("created_at DESC").all
+    @tasks = Task.includes(:user).order("created_at DESC")
   end
   
   def new
@@ -48,7 +49,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:state, :name, :task, :limit_date)
+    params.require(:task).permit(:state, :task, :limit_date).merge(user_id: current_user.id)
   end
 
   def set_task

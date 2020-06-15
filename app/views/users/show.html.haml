@@ -1,0 +1,6 @@
+= @nickname
+さんのタスク一覧
+
+- @tasks.each do |t|
+  %a(href="/tasks/#{t.id}")
+    = simple_format(t.task)

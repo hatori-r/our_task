@@ -18,13 +18,14 @@
           - if user_signed_in?
             %ul.user-sign-in
               %li
-                = link_to "My page", root_path, method: :get, class: 'new'
+                %a#current_user.new(href="/users/#{current_user.id}")
+                  %span#current_user.new= current_user.nickname
               %li
-                = link_to "Log Out", destroy_user_session_path, method: :delete, class: 'log-in'
+                = link_to "Log Out", destroy_user_session_path, method: :delete, id: 'confirm_log_out', class: 'log-out'
           - else
             %ul.user-sign-in
               %li
-                = link_to "Sign up", new_user_registration_path, class: 'new'
+                = link_to "Sign up", new_user_registration_path, class: 'new', id: 'up'
               %li
                 = link_to "Log in", new_user_session_path, class: 'log-in'
     .notification
@@ -35,5 +36,5 @@
   Copyright
   %span.copyright © 
   2020 our task All Rights Reserved.
-  %a(href="#")
+  %a.remove-top(href="#")
     %i.far.fa-caret-square-up

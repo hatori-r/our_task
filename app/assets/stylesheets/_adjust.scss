@@ -12,7 +12,7 @@ a {
 body {
   height: 100%;
   min-height: 100%;
-  width: 100vw;;
+  width: 100vw;
   padding-bottom: 50px;
   margin: 0 auto;
   overflow: auto;
@@ -39,7 +39,7 @@ body {
 
 .title-box-inner {
   background: #41B883;
-  margin: 0 20px;
+  margin: 0 25px;
   display: flex;
   justify-content: space-between;
 }
@@ -53,13 +53,15 @@ body {
 
 .user-sign-in {
   background: #41B883;
-  width: 200px;
+  width: 220px;
   display: flex;
   justify-content: space-between;
 }
 
 .new,
-.log-in {
+.log-in,
+.log-out {
+  height: 100%;
   width: 90px;
   font-size: 18px;
   font-weight: bold;
@@ -75,6 +77,15 @@ body {
 
 .log-in:hover {
   color: #35495E;
+}
+
+#up {
+  background: #41B883;
+  padding-left: 20px;
+}
+
+#current_user {
+  width: 120px;
 }
 
 .new_task {
@@ -115,12 +126,12 @@ body {
 
 footer {
   background: #fff;
-  height: 80px;
+  height: 60px;
   width: 100%;
   border-top: 0.5px solid #bbb;
   font-size: 12px;
   color: #999;
-  line-height: 80px;
+  line-height: 60px;
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -134,15 +145,17 @@ footer {
   color: #41B883;
 }
 
+.remove-top {
+  display: block;
+}
+
 .fa-caret-square-up {
   background: #fff;
-  height: 60px;
-  width: 80px;
-  padding-top: 20px;
-  font-size: 40px;
+  height: 45px;
+  width: 60px;
+  padding-top: 15px;
+  font-size: 35px;
   color: #374c63;
-  line-height: 80px;
-  text-align: center;
   position: fixed;
   bottom: 0;
   right: 80px;
@@ -150,7 +163,7 @@ footer {
 
 .fa-caret-square-up:hover {
   color: #374c63;
-  font-size: 41px;
+  font-size: 36px;
   text-shadow: 1px 1px 5px #aaa;
   transition: text-shadow 0.1s;
 }
