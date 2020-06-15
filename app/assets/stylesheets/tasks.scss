@@ -112,11 +112,25 @@
   display: block;
 }
 
-.ellipsis-h:hover {
+.details a:hover {
   color: #35495E;
   font-weight: bold;
   text-shadow: 1px 1px 5px #aaa;
   transition: text-shadow 0.1s;
+}
+
+.details-none {
+  background: #fff;
+  color: #f1f1f1;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 41px;
+  text-align: center;
+  display: block;
+}
+
+.details-none:hover {
+  cursor: default;
 }
 
 .tasks-box {
@@ -210,6 +224,25 @@
 .now-state:hover {
   box-shadow: 0 0 15px 2px #d4d4d4;
   transition: box-shadow 0.1s;
+}
+
+.others-now-state {
+  background: #41B883;
+  height: 120px;
+  width: 120px;
+  line-height: 120px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  color: #f5f5f5;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.others-now-state:hover {
+  box-shadow: 0 0 15px 2px #d4d4d4;
+  transition: box-shadow 0.1s;
+  cursor: default;
 }
 
 .created-date {

@@ -12,41 +12,7 @@
         %li
           = link_to "Sing up", new_user_registration_path, class: "my-page"
   - @tasks.each do |t|
-    .tasks-table
-      .task-user
-        %ul
-          %li
-            %i.far.fa-user-circle
-          %li
-            %a.user-mame{href: "/users/#{t.user.id}"}
-              %span.user-name= t.user.nickname
-          %li.details
-            = link_to '…', "/tasks/#{t.id}/edit"
-      .tasks-box
-        .limit-box
-          .limit-upper
-            .limit LIMIT
-          .limit-lower
-            .limit-date= t.limit_date
-        .task-box
-          .task-upper
-            .task TASK
-            .task-data
-              .task-data-inner= simple_format(t.task)
-              .created-date= t.created_at.to_s(:datetime)
-              .status-table
-                %a(href="/tasks/#{t.id}/edit")
-                  .now-state= t.state
-
-      .other-box
-        %ul
-          %li
-            %a(href="#")
-              %i.far.fa-thumbs-up
-          %li
-            %a(href="/tasks/#{t.id}")
-              %i.far.fa-comment-dots
-        .adjustment-box
+    = render partial: "task", locals: { t: t }
+  = paginate(@tasks)
 -# .side-ber
 -#   開発段階
-

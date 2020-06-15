@@ -21,7 +21,7 @@
                 %a#current_user.new(href="/users/#{current_user.id}")
                   %span#current_user.new= current_user.nickname
               %li
-                = link_to "Log Out", destroy_user_session_path, method: :delete, id: 'confirm_log_out', class: 'log-out'
+                = link_to "Log Out", destroy_user_session_path, method: :delete, class: 'log-out'
           - else
             %ul.user-sign-in
               %li
