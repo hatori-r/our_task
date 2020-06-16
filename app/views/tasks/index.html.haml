@@ -5,12 +5,15 @@
         %li
           = link_to "Share task", "/tasks/new", class: "post-task"
         %li
-          = link_to "My task", "/users/#{current_user.id}", class: "my-page"
+          = link_to "My page", "/users/#{current_user.id}", class: "my-page"
       - else
         %li
           = link_to "Share task", new_user_session_path, class: "post-task"
         %li
           = link_to "Sing up", new_user_registration_path, class: "my-page"
+  = form_with(url: tasks_searches_path, local: true, method: :get, class: "search-form") do |f|
+    = f.text_field :keyword, placeholder: "Search for tasks", class: "search-input"
+    = f.submit "Search", class: "search-btn"
   - @tasks.each do |t|
     = render partial: "task", locals: { t: t }
   = paginate(@tasks)

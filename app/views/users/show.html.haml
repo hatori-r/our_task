@@ -1,6 +1,11 @@
+.my-page-top
+  My page
+
 = @nickname
 さんのタスク一覧
 
 - @tasks.each do |t|
   = render partial: "tasks/task", locals: { t: t }
 = paginate(@tasks)
+
+= link_to "TOP", "/", class: "my-page"

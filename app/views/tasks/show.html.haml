@@ -55,3 +55,23 @@
 = @task.task
 = @task.state
 = @task.created_at.to_s(:datetime)
+
+.container
+  - if current_user
+    = form_with(model: [@task, @comment], local: true) do |f|
+      = f.text_area :text, placeholder: "a comment", rows: "2"
+      = f.submit "SEND"
+  - else
+    %p ※ Please log in or register to comment.
+    = link_to "Sign up", new_user_registration_path, class: 'new', id: 'up'
+    = link_to "Log in", new_user_session_path, class: 'log-in'
+
+.comments
+  %h4 ＜コメント一覧＞
+  - if @comments
+    - @comments.each do |comment|
+      %p
+        %strong
+          = link_to comment.user.nickname, "/users/#{comment.user_id}"
+          ：
+        = comment.text
