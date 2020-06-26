@@ -1,7 +1,7 @@
 .main-table ul {
   height: 60px;
   padding-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: space-around;
 }
@@ -42,13 +42,51 @@
   transition: box-shadow 0.1s;
 }
 
+.search-form {
+  width: 675px;
+  margin: 0 auto;
+  .search-inner {
+    margin: 70px 0 60px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    .search-input{ 
+      display: block;
+      height: 50px;
+      width: 100%;
+      padding: 0 50px;
+      border-radius: 50px;
+      border: 1px solid #dfe1e5;
+      outline: none;
+      color: #757575;
+      box-shadow: 0 0 2px #bebebe;
+    }
+    .search-btn {
+      height: 50px;
+      width: 50px;
+      background: none;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 20px;
+      outline: none;
+      i {
+        display: block;
+        height: 100%;
+        width: 100%;
+        color: #757575;
+        line-height: 50px;
+      }
+    }
+  }
+}
+
 .tasks {
-  background-color: #f5f5f5;
   height: 100%;
   min-height: 100vh;
   width: calc(100% - 200px);
   max-width: 880px;
-  min-width: 820px;
+  min-width: 810px;
   margin: 0 auto;
 }
 
@@ -60,25 +98,21 @@
 }
 
 .task-user {
-  background: #fff;
   height: 100%;
   border-bottom: 0.5px solid #ddd;
 }
 
 .task-user li {
   height: 100%;
-  background: #fff;
 }
 
 .task-user ul {
-  background: #fff;
   height: 100%;
   display: flex;
   position: relative;
 }
 
 .fa-user-circle {
-  background: #fff;
   width: 25px;
   color: #41B883;
   font-size: 24px;
@@ -87,7 +121,6 @@
 }
 
 .user-name {
-  background: #fff;
   height: 40px;
   padding: 0 10px;
   font-size: 18px;
@@ -103,7 +136,6 @@
 }
 
 .details a {
-  background: #fff;
   color: #888;
   font-size: 20px;
   font-weight: bold;
@@ -120,7 +152,6 @@
 }
 
 .details-none {
-  background: #fff;
   color: #f1f1f1;
   font-size: 20px;
   font-weight: bold;
@@ -146,7 +177,6 @@
 }
 
 .limit {
-  background: #fff;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -154,7 +184,6 @@
 }
 
 .limit-date {
-  background: #fff;
   height: 100%;
   border-top: 0.5px solid #ddd;
   border-bottom: 0.5px solid #ddd;
@@ -169,7 +198,6 @@
 }
 
 .task {
-  background: #fff;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -177,7 +205,6 @@
 }
 
 .task-data {
-  background: #fff;
   height: 120px;
   font-size: 20px;
   border-top: 0.5px solid #ddd;
@@ -186,7 +213,6 @@
 }
 
 .task-data-inner {
-  background: #fff;
   font-weight: bold;
   height: 82px;
   width: 90%;
@@ -194,10 +220,6 @@
   left: 25px;
   top: 13px;
   overflow: auto;
-}
-
-.task-data-inner p {
-  background: #fff;
 }
 
 .status-table {
@@ -246,7 +268,6 @@
 }
 
 .created-date {
-  background: #fff;
   height: 16px;
   width: 200px;
   font-size: 13px;
@@ -258,26 +279,22 @@
 }
 
 .other-box {
-  background: #fff;
   height: 100%;
   display: flex;
   justify-content: flex-end;
 }
 
 .other-box ul {
-  background: #fff;
   display: flex;
 }
 
 .other-box ul li {
-  background: #fff;
   width: 50px;
   padding-top: 5px;
 }
 
 .fa-thumbs-up,
 .fa-comment-dots {
-  background: #fff;
   height: 100%;
   width: 100%;
   font-size: 25px;
@@ -298,7 +315,6 @@
 }
 
 .adjustment-box {
-  background: #fff;
   width: 50px;
 }
 

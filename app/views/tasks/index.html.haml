@@ -12,8 +12,10 @@
         %li
           = link_to "Sing up", new_user_registration_path, class: "my-page"
   = form_with(url: tasks_searches_path, local: true, method: :get, class: "search-form") do |f|
-    = f.text_field :keyword, placeholder: "Search for tasks", class: "search-input"
-    = f.submit "Search", class: "search-btn"
+    .search-inner
+      = f.text_field :keyword, placeholder: "Search for tasks", class: "search-input"
+      = f.button type: "submit", style: 'border-style: none;', class: "search-btn" do
+        %i.fas.fa-search
   - @tasks.each do |t|
     = render partial: "task", locals: { t: t }
   = paginate(@tasks)

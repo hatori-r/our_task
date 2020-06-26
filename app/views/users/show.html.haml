@@ -1,11 +1,12 @@
-.my-page-top
-  My page
+.users
+  .my-page-top
+    My page
 
-= @nickname
-さんのタスク一覧
+  = @nickname
+  さんのタスク一覧
 
-- @tasks.each do |t|
-  = render partial: "tasks/task", locals: { t: t }
-= paginate(@tasks)
+  - @tasks.each do |t|
+    = render partial: "tasks/task", locals: { t: t }
+  = paginate(@tasks)
 
-= link_to "TOP", "/", class: "my-page"
+  = link_to "TOP", "/", class: "my-page"
