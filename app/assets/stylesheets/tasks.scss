@@ -46,7 +46,7 @@
   width: 675px;
   margin: 0 auto;
   .search-inner {
-    margin: 70px 0 60px;
+    margin: 50px 0;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -88,6 +88,7 @@
   max-width: 880px;
   min-width: 810px;
   margin: 0 auto;
+  padding-top: 30px;
 }
 
 .tasks-table {

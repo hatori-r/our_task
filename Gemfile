@@ -78,3 +78,5 @@ gem 'devise'
 gem 'webpacker', github: 'rails/webpacker'
 
 gem 'kaminari'
+
+gem 'jquery-rails'
