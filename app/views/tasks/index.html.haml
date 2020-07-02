@@ -1,0 +1,23 @@
+.tasks
+  .main-table
+    %ul
+      - if user_signed_in?
+        %li
+          = link_to "Share task", "/tasks/new", class: "post-task"
+        %li
+          = link_to "My page", "/users/#{current_user.id}", class: "my-page"
+      - else
+        %li
+          = link_to "Share task / Log in", new_user_session_path, class: "post-task"
+        %li
+          = link_to "Sing up", new_user_registration_path, class: "my-page"
+  = form_with(url: tasks_searches_path, local: true, method: :get, class: "search-form") do |f|
+    .search-inner
+      = f.text_field :keyword, placeholder: "Search for tasks", class: "search-input"
+      = f.button type: "submit", style: 'border-style: none;', class: "search-btn" do
+        %i.fas.fa-search
+  - @tasks.each do |t|
+    = render partial: "task", locals: { t: t }
+  = paginate(@tasks)
+-# .side-ber
+-#   開発段階

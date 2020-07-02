@@ -1,0 +1,124 @@
+-# %form{action: "/tasks/#{@task.id}", method: "POST"}
+-#   %input{name: "_method", type: "hidden", value: "PUT"}/
+-#   %input{name: "authenticity_token", type: "hidden", value: form_authenticity_token}/
+-#   %div
+-#     %label{for: "task"} Task Name
+-#     %input#task{name: "task", required: "", type: "text", value: @task.task}/
+-#   %div
+-#     %select{name: "state"}
+-#       - @status.each_with_index do |s,i|
+-#       %option{value: s}= s
+-#     %label Task State
+-#   %div
+-#     %input{name: "limit_date", required: "", type: "date"}/
+-#     %label Task Limit Day
+-#   %p
+-#     %button{type: "submit"} update
+
+-# - @task.each do |t|
+-#   .tasks-table
+-#     .task-user
+-#       %ul
+-#         %li
+-#           %i.far.fa-user-circle
+-#         %li
+-#           %a(href="#")
+-#             .user-name= t.name
+-#         %li.details
+-#           = link_to '…', "/tasks/#{t.id}/edit"
+-#     .tasks-box
+-#       .limit-box
+-#         .limit-upper
+-#           .limit LIMIT
+-#         .limit-lower
+-#           .limit-date= t.limit_date
+-#       .task-box
+-#         .task-upper
+-#           .task TASK
+-#           .task-data
+-#             .task-data-inner= simple_format(t.task)
+-#             .created-date= t.created_at.to_s(:datetime)
+-#             .status-table
+-#               %a(href="#")
+-#                 .now-state= t.state
+-#     .other-box
+-#       %ul
+-#         %li
+-#           %a(href="#")
+-#             %i.far.fa-thumbs-up
+-#         %li
+-#         = link_to task_path(t.id), method: :get, class: "fa-comment-dots" do
+-#           = icon('far', 'fa-comment-dots')
+-#       .adjustment-box
+.task-comment
+  .tasks
+    .tasks-table
+      .task-user
+        %ul
+          %li
+            %i.far.fa-user-circle
+          %li
+            %a.user-name{href: "/users/#{@task.user.id}"}
+              %span.user-name= @task.user.nickname
+          - if user_signed_in? && current_user.id == @task.user.id
+            %li.details
+              = link_to "…", "/tasks/#{@task.id}/edit"
+          - else
+            %li.details
+              .details-none
+                …
+      .tasks-box
+        .limit-box
+          .limit-upper
+            .limit LIMIT
+          .limit-lower
+            .limit-date= @task.limit_date
+        .task-box
+          .task-upper
+            .task TASK
+            .task-data
+              .task-data-inner= simple_format(@task.task)
+              .created-date= @task.created_at.to_s(:datetime)
+              - if user_signed_in? && current_user.id == @task.user.id
+                .status-table
+                  %a(href="/tasks/#{@task.id}/edit")
+                    .now-state= @task.state
+              - else
+                .status-table
+                  .others-now-state= @task.state
+    .counts-table
+      .like-counts
+        .like-circle
+          %i.far.fa-thumbs-up
+        .counts
+          20
+      .comment-counts
+        - if @task.comments.size == 0
+          %button.comment-circle-zero
+            %i.far.fa-comment-dots
+        - else
+          %button.comment-circle
+            %i.far.fa-comment-dots
+        .counts
+          = @task.comments.size
+
+    .container
+      - if current_user
+        = form_with(model: [@task, @comment], local: true) do |f|
+          = f.text_field :text, placeholder: "a comment", rows: "2", class: "container__text-area"
+          = f.button type: "submit", class: "container__submit" do
+            %i.far.fa-paper-plane
+      - else
+        %p ※ Please log in or register to comment.
+        = link_to "Sign up", new_user_registration_path, class: 'new', id: 'up'
+        = link_to "Log in", new_user_session_path, class: 'log-in'
+
+      .comments
+        - if @comments
+          - @comments.each do |comment|
+            %p.comments__comment
+              %strong
+                %i.far.fa-user-circle
+                = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                ：
+              = comment.text

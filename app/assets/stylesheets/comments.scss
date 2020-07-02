@@ -1,0 +1,134 @@
+.task-comment {
+  margin-top: 100px;
+}
+
+.counts-table {
+  background: #fff;
+  height: 120px;
+  width: calc(98% - 400px);
+  padding: 0 200px;
+  border-radius: 5px;
+  margin-top: -65px;
+  margin-left: 0;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 3px #bebebe;
+  .like-counts {
+    width: 160px;
+    display: flex;
+    padding: 30px 20px;
+    .like-circle {
+      background: #ccc;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      i {
+        color: #fff;
+        line-height: 50px;
+        cursor: pointer;
+      }
+    }
+    .counts {
+      height: 50px;
+      width: 90px;
+      padding-right: 10px;
+      border-bottom: 1px solid #efefef;
+      font-size: 22px;
+      line-height: 60px;
+      text-align: right;
+    }
+  }
+  .comment-counts {
+    width: 160px;
+    display: flex;
+    padding: 30px 20px;
+    .comment-circle-zero {
+      background: #ccc;
+      height: 50px;
+      width: 50px;
+      border: none;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      i {
+        color: #fff;
+        line-height: 50px;
+      }
+    }
+    .comment-circle {
+      background: #64cffa;
+      height: 50px;
+      width: 50px;
+      border: none;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      i {
+        color: #fff;
+        line-height: 50px;
+      }
+    }
+    .counts {
+      height: 50px;
+      width: 90px;
+      padding-right: 10px;
+      border-bottom: 1px solid #efefef;
+      font-size: 22px;
+      line-height: 60px;
+      text-align: right;
+    }
+  }
+}
+
+.container {
+  background: #fff;
+  height: 400px;
+  width: calc(98% - 80px);
+  padding: 40px;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-left: 0;
+  margin-right: auto;
+  box-shadow: 0 0 3px #bebebe;
+  position: relative;
+  &__text-area {
+    height: 35px;
+    width: calc(93% - 40px);
+    padding: 5px 40px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: 0 0 2px #bebebe;
+  }
+  &__submit {
+    background: none;
+    position: absolute;
+    top: 40px;
+    right: 70px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    color: #f5f5f5;
+    outline: none;
+    cursor: pointer;
+    i {
+      color: #ccc;
+      &:hover {
+        text-shadow: 1px 1px 1px #eee;
+        transition: color 0.3s;
+      }
+    }
+  }
+}
+
+.comments {
+  height: 300px;
+  margin-top: 30px;
+  overflow: auto;
+  &__comment {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+}

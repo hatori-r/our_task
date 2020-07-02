@@ -1,0 +1,43 @@
+.tasks-table
+  .task-user
+    %ul
+      %li
+        %i.far.fa-user-circle
+      %li
+        %a.user-mame{href: "/users/#{t.user.id}"}
+          %span.user-name= t.user.nickname
+      - if user_signed_in? && current_user.id == t.user.id
+        %li.details
+          = link_to '…', "/tasks/#{t.id}/edit"
+      - else
+        %li.details
+          .details-none
+            …
+  .tasks-box
+    .limit-box
+      .limit-upper
+        .limit LIMIT
+      .limit-lower
+        .limit-date= t.limit_date
+    .task-box
+      .task-upper
+        .task TASK
+        .task-data
+          .task-data-inner= simple_format(t.task)
+          .created-date= t.created_at.to_s(:datetime)
+          - if user_signed_in? && current_user.id == t.user.id
+            .status-table
+              %a(href="/tasks/#{t.id}/edit")
+                .now-state= t.state
+          - else
+            .status-table
+              .others-now-state= t.state
+  .other-box
+    %ul
+      %li
+        %a(href="#")
+          %i.far.fa-thumbs-up
+      %li
+        %a(href="/tasks/#{t.id}")
+          %i.far.fa-comment-dots
+    .adjustment-box
