@@ -94,14 +94,13 @@
           20
       .comment-counts
         - if @task.comments.size == 0
-          .comment-circle-zero
+          %button.comment-circle-zero
             %i.far.fa-comment-dots
         - else
-          .comment-circle
+          %button.comment-circle
             %i.far.fa-comment-dots
         .counts
           = @task.comments.size
-
 
     .container
       - if current_user
@@ -114,11 +113,12 @@
         = link_to "Sign up", new_user_registration_path, class: 'new', id: 'up'
         = link_to "Log in", new_user_session_path, class: 'log-in'
 
-    .comments
-      - if @comments
-        - @comments.each do |comment|
-          %p
-            %strong
-              = link_to comment.user.nickname, "/users/#{comment.user_id}"
-              ：
-            = comment.text
+      .comments
+        - if @comments
+          - @comments.each do |comment|
+            %p.comments__comment
+              %strong
+                %i.far.fa-user-circle
+                = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                ：
+              = comment.text

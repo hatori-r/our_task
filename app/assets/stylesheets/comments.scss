@@ -5,10 +5,10 @@
 .counts-table {
   background: #fff;
   height: 120px;
-  width: calc(97.5% - 400px);
+  width: calc(98% - 400px);
   padding: 0 200px;
-  border-radius: 3px;
-  margin-top: -50px;
+  border-radius: 5px;
+  margin-top: -65px;
   margin-left: 0;
   margin-right: auto;
   display: flex;
@@ -47,7 +47,10 @@
       background: #ccc;
       height: 50px;
       width: 50px;
+      border: none;
       border-radius: 50%;
+      outline: none;
+      cursor: pointer;
       i {
         color: #fff;
         line-height: 50px;
@@ -57,7 +60,10 @@
       background: #64cffa;
       height: 50px;
       width: 50px;
+      border: none;
       border-radius: 50%;
+      outline: none;
+      cursor: pointer;
       i {
         color: #fff;
         line-height: 50px;
@@ -77,12 +83,14 @@
 
 .container {
   background: #fff;
-  height: 50px;
-  width: calc(97.5% - 80px);
+  height: 400px;
+  width: calc(98% - 80px);
   padding: 40px;
-  margin-top: 20px;
+  border-radius: 5px;
+  margin-top: 15px;
   margin-left: 0;
   margin-right: auto;
+  box-shadow: 0 0 3px #bebebe;
   position: relative;
   &__text-area {
     height: 35px;
@@ -116,9 +124,11 @@
 }
 
 .comments {
-  background: #fff;
-  height: 100;
-  width: 97.5%;
-  margin-left: 0;
-  margin-right: auto;
+  height: 300px;
+  margin-top: 30px;
+  overflow: auto;
+  &__comment {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
 }

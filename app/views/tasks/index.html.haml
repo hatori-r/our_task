@@ -8,7 +8,7 @@
           = link_to "My page", "/users/#{current_user.id}", class: "my-page"
       - else
         %li
-          = link_to "Share task", new_user_session_path, class: "post-task"
+          = link_to "Share task / Log in", new_user_session_path, class: "post-task"
         %li
           = link_to "Sing up", new_user_registration_path, class: "my-page"
   = form_with(url: tasks_searches_path, local: true, method: :get, class: "search-form") do |f|
