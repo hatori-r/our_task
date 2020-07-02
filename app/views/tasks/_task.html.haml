@@ -35,8 +35,13 @@
   .other-box
     %ul
       %li
-        %a(href="#")
-          %i.far.fa-thumbs-up
+        - if current_user.Likes.find_by(task_id: @task.id)
+          = link_to task_like_path(@task), method: :delete do
+            %i.far.fa-thumbs-up
+        - else
+          = link_to task_likes_path(@task), method: :post do
+            %i.far.fa-thumbs-up
+          -# %a(href="#")
       %li
         %a(href="/tasks/#{t.id}")
           %i.far.fa-comment-dots
