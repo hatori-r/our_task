@@ -88,10 +88,28 @@
                   .others-now-state= @task.state
     .counts-table
       .like-counts
-        .like-circle
-          %i.far.fa-thumbs-up
+        - if user_signed_in?
+          - if current_user.already_liked?(@task)
+            .like-circle-orange
+              = link_to task_like_path(@task), method: :delete do
+                -# -----↓非同期処理の記述↓-----
+                -# = link_to task_like_path(@task), method: :delete, remote: true do
+                -# -----↑非同期処理の記述↑-----
+                %i.far.fa-thumbs-up
+          - else
+            .like-circle-none
+              = link_to task_likes_path(@task), method: :post do
+                -# -----↓非同期処理の記述↓-----
+                -# = link_to task_likes_path(@task), method: :post, remote: true do
+                -# -----↑非同期処理の記述↑-----
+                %i.far.fa-thumbs-up
+        - else
+          .like-circle-none
+            = link_to new_user_session_path do
+              %i.far.fa-thumbs-up
+
         .counts
-          20
+          = @task.likes.size
       .comment-counts
         - if @task.comments.size == 0
           %button.comment-circle-zero

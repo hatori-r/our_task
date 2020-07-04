@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :tasks
   has_many :comments
+  has_many :like, dependent: :destroy
+  has_many :liked_tasks, through: :likes, source: :task
+  def already_liked?(task)
+    self.like.exists?(task_id: task.id)
+  end
 end

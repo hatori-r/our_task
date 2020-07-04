@@ -99,6 +99,7 @@ body {
   color: #f5f5f5;
   cursor: pointer;
   position: fixed;
+  z-index: 1;
   &:hover {
     background: #7cd5f8;
     transition: background 0.2s;
@@ -124,6 +125,7 @@ body {
   // right: 0;
   // left: 0;
   margin: auto;
+  z-index: 1;
   &:hover {
     background: #fccb47;
     transition: background 0.2s;
@@ -142,6 +144,7 @@ body {
   color: #f5f5f5;
   cursor: pointer;
   position: fixed;
+  z-index: 1;
   &:hover {
     background: #f57362;
     transition: background 0.2s;

@@ -1,0 +1,23 @@
+.other-box {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.other-box ul {
+  display: flex;
+}
+
+.other-box ul li {
+  width: 50px;
+  padding-top: 5px;
+}
+
+.fa-thumbs-up,
+.fa-comment-dots {
+  height: 100%;
+  width: 100%;
+  font-size: 25px;
+  line-height: 50px;
+  text-align: center;
+}

@@ -18,15 +18,40 @@
     width: 160px;
     display: flex;
     padding: 30px 20px;
-    .like-circle {
-      background: #ccc;
+    .like-circle-orange {
+      background: #e0245e;
       height: 50px;
       width: 50px;
       border-radius: 50%;
-      i {
-        color: #fff;
-        line-height: 50px;
-        cursor: pointer;
+      box-shadow: 0 0 5px #bbb;
+      a {
+        display: block;
+        i {
+          font-size: 21px;
+          color: #fff;
+          font-weight: bold;
+          line-height: 50px;
+          cursor: pointer;
+        }
+      }
+    }
+    .like-circle-none {
+      background: #eee;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      box-shadow: 0 0 5px #bbb;
+      a {
+        display: block;
+        i {
+          color: #fff;
+          line-height: 50px;
+          cursor: pointer;
+          &:hover {
+            color: #e0245e;
+            transition: color 0.1s;
+          }
+        }
       }
     }
     .counts {
@@ -44,12 +69,13 @@
     display: flex;
     padding: 30px 20px;
     .comment-circle-zero {
-      background: #ccc;
+      background: #eee;
       height: 50px;
       width: 50px;
       border: none;
       border-radius: 50%;
       outline: none;
+      box-shadow: 0 0 5px #bbb;
       cursor: pointer;
       i {
         color: #fff;
@@ -63,10 +89,15 @@
       border: none;
       border-radius: 50%;
       outline: none;
+      box-shadow: 0 0 5px #bbb;
       cursor: pointer;
       i {
         color: #fff;
         line-height: 50px;
+        &:hover {
+          text-shadow: 1px 1px 10px #ebebeb;
+          transition: text-shadow 0.1s;
+        }
       }
     }
     .counts {
