@@ -46,6 +46,7 @@ class TasksController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @task.comments.includes(:user)
+    @like = Like.new
   end
 
   private

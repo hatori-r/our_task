@@ -4,7 +4,7 @@
       %h3
         Share task
       = f.text_area :task, placeholder: "task" , rows: "10", required: ""
-      = f.select :state, [['New', 'New'], ['Doing', 'Doing'], ['Completed!', 'Completed!'], ['Failure', 'Failure']], { selected: 'New', selected: 1, required: "" } 
+      = f.select :state, Task.states.keys, { required: "" }
       %label Task State
       .delete-field
       = link_to "delete", task_path(@task.id), method: :delete
