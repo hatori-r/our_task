@@ -1,22 +1,22 @@
 <template>
-  <div id="app">
+  <div id="app" style="background: #f5f5f5;">
     <p>{{ message }}</p>
   </div>
 </template>
 
 <script>
-// export default {
-//   data: function () {
-//     return {
-//       message: "Hello Vue!"
-//     }
-//   }
-// }
+export default {
+  data: function () {
+    return {
+      message: ""
+    }
+  }
+}
 </script>
 
 <style scoped>
-/* p {
+p {
   font-size: 2em;
   text-align: center;
-} */
+}
 </style>

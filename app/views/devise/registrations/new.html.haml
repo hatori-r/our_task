@@ -1,27 +1,27 @@
+.welcome our task へようこそ！
 .contents.row
   .container
-    %h2 Sign up
-    = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
-      = devise_error_messages!
-      .field
-        = f.label :nickname
-        %em (8 characters maximum)
-        %br/
-        = f.text_field :nickname, autofocus: true, maxlength: "8"
-      .field
-        = f.label :email
-        %br/
-        = f.email_field :email
-      .field
-        = f.label :password
-        - if @validatable
-          %em
-            (#{@minimum_password_length} characters minimum)
-        %br/
-        = f.password_field :password, autocomplete: "off"
-      .field
-        = f.label :password_confirmation
-        %br/
-        = f.password_field :password_confirmation, autocomplete: "off"
-      .actions
-        = f.submit "Sign up"
+    %h2.sign-up Sign up
+    .container__inner
+      = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+        = devise_error_messages!
+        .field
+          %em ニックネーム (最大8文字まで)
+          = f.text_field :nickname, autofocus: true, maxlength: "8", id: "nickname", placeholder: "Nicknameを入力"
+        .field
+          -# = f.label :email
+          %em メールアドレス
+          = f.email_field :email, placeholder: "メールアドレスを入力"
+        .field
+          -# = f.label :password
+          %em パスワード
+          - if @validatable
+            %em
+              (#{@minimum_password_length} characters minimum)
+          = f.password_field :password, autocomplete: "off", placeholder: "パスワードを入力"
+        .field
+          -# = f.label :password_confirmation
+          %em 確認用パスワード
+          = f.password_field :password_confirmation, autocomplete: "off", placeholder: "確認用パスワードを入力"
+        .actions
+          = f.submit "Sign up"

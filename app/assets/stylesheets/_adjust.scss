@@ -9,8 +9,13 @@ a {
   text-decoration: none;
 }
 
+html {
+  background: #f5f5f5;
+}
+
 body {
   background: #f5f5f5;
+  // min-height: 100vh;
   height: 100%;
   min-height: 100%;
   width: 100%;
@@ -91,6 +96,7 @@ body {
   background: #64cffa;
   height: 60px;
   width: 100%;
+  border: 1px solid #bbb;
   line-height: 60px;
   text-align: center;
   letter-spacing: 0.1em;
@@ -100,6 +106,7 @@ body {
   cursor: pointer;
   position: fixed;
   z-index: 1;
+  transition: background 0.2s;
   &:hover {
     background: #7cd5f8;
     transition: background 0.2s;
@@ -107,12 +114,10 @@ body {
 }
 
 .update_task {
-  background: #fabe19;
+  background: #ffc115;
   height: 60px;
-  // width: calc(100% - 200px);
-  // max-width: 880px;
-  // min-width: 810px;
   width: 100%;
+  border: 1px solid #bbb;
   line-height: 60px;
   text-align: center;
   letter-spacing: 0.1em;
@@ -121,21 +126,20 @@ body {
   color: #f5f5f5;
   cursor: pointer;
   position: fixed;
-  // top: 37.5%;
-  // right: 0;
-  // left: 0;
   margin: auto;
   z-index: 1;
+  transition: background 0.2s;
   &:hover {
-    background: #fccb47;
+    background: #ffc72c;
     transition: background 0.2s;
   }
 }
 
 .delete_task {
-  background: #f05b47;
+  background: #afafaf;
   height: 60px;
   width: 100%;
+  border: 1px solid #bbb;
   line-height: 60px;
   text-align: center;
   letter-spacing: 0.1em;
@@ -145,8 +149,9 @@ body {
   cursor: pointer;
   position: fixed;
   z-index: 1;
+  transition: background 0.2s;
   &:hover {
-    background: #f57362;
+    background: #bbb;
     transition: background 0.2s;
   }
 }

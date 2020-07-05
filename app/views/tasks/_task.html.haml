@@ -38,7 +38,7 @@
         - if current_user.already_liked?(t)
           %li
             .like-orange
-              = link_to task_like_path(id: t.id, task_id: t.id), method: :delete do
+              = link_to task_like_path(id: t.id, task_id: t.id), id: "like_btn", method: :delete do
                 -# -----↓非同期処理の記述↓-----
                 -# = link_to task_like_path(id: t.id, task_id: t.id), method: :delete, remote: true do
                 -# -----↑非同期処理の記述↑-----

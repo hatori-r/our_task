@@ -18,7 +18,7 @@
 }
 
 .cancel_good {
-  background: #f05b47;
+  background: #afafaf;
   height: 60px;
   width: 100%;
   line-height: 60px;
@@ -31,7 +31,7 @@
   position: fixed;
   z-index: 1;
   &:hover {
-    background: #f57362;
+    background: #bbb;
     transition: background 0.2s;
   }
 }

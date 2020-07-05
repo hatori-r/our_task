@@ -29,7 +29,7 @@ class TasksController < ApplicationController
     task.update(task_params)
     if task.save
       flash[:update_task] = "タスクを更新しました。"
-      redirect_to '/'
+      redirect_to "/tasks/#{task.id}"
     else
       flash.now[:danger] = "送信に失敗しました。もう一度試してみてください。"
       render 'tasks/new'
