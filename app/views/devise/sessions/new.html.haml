@@ -1,19 +1,17 @@
 .contents.row
   .container
-    %h2 Log in
-    = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
-      .field
-        = f.label :email
-        %br/
-        = f.email_field :email, autofocus: true
-      .field
-        = f.label :password
-        %br/
-        = f.password_field :password, autocomplete: "off"
-      - if devise_mapping.rememberable?
+    %h2.login Log in
+    .container__inner
+      = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
         .field
-          = f.label :remember_me
-          %br/
-          = f.check_box :remember_me
-      .actions
-        = f.submit "Log in"
+          %em メールアドレス
+          = f.email_field :email, autofocus: true
+        .field
+          %em パスワード
+          = f.password_field :password, autocomplete: "off"
+        - if devise_mapping.rememberable?
+          .field
+            %em.remember_me-label ログインを記録
+            = f.check_box :remember_me, class: "remember_me"
+        .actions
+          = f.submit "Log in"

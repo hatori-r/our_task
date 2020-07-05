@@ -1,55 +1,3 @@
--# %form{action: "/tasks/#{@task.id}", method: "POST"}
--#   %input{name: "_method", type: "hidden", value: "PUT"}/
--#   %input{name: "authenticity_token", type: "hidden", value: form_authenticity_token}/
--#   %div
--#     %label{for: "task"} Task Name
--#     %input#task{name: "task", required: "", type: "text", value: @task.task}/
--#   %div
--#     %select{name: "state"}
--#       - @status.each_with_index do |s,i|
--#       %option{value: s}= s
--#     %label Task State
--#   %div
--#     %input{name: "limit_date", required: "", type: "date"}/
--#     %label Task Limit Day
--#   %p
--#     %button{type: "submit"} update
-
--# - @task.each do |t|
--#   .tasks-table
--#     .task-user
--#       %ul
--#         %li
--#           %i.far.fa-user-circle
--#         %li
--#           %a(href="#")
--#             .user-name= t.name
--#         %li.details
--#           = link_to '…', "/tasks/#{t.id}/edit"
--#     .tasks-box
--#       .limit-box
--#         .limit-upper
--#           .limit LIMIT
--#         .limit-lower
--#           .limit-date= t.limit_date
--#       .task-box
--#         .task-upper
--#           .task TASK
--#           .task-data
--#             .task-data-inner= simple_format(t.task)
--#             .created-date= t.created_at.to_s(:datetime)
--#             .status-table
--#               %a(href="#")
--#                 .now-state= t.state
--#     .other-box
--#       %ul
--#         %li
--#           %a(href="#")
--#             %i.far.fa-thumbs-up
--#         %li
--#         = link_to task_path(t.id), method: :get, class: "fa-comment-dots" do
--#           = icon('far', 'fa-comment-dots')
--#       .adjustment-box
 .task-comment
   .tasks
     .tasks-table
@@ -127,9 +75,13 @@
           = f.button type: "submit", class: "container__submit" do
             %i.far.fa-paper-plane
       - else
-        %p ※ Please log in or register to comment.
-        = link_to "Sign up", new_user_registration_path, class: 'new', id: 'up'
-        = link_to "Log in", new_user_session_path, class: 'log-in'
+        .ask-for-login
+          %p.ask-for-login__upper Please log in or register to comment.
+          .ask-for-login__lower
+            %i.fas.fa-sign-in-alt
+        .login-form
+          = link_to "Sign up", new_user_registration_path, class: "signin_from_show"
+          = link_to "Log in", new_user_session_path, class: "login_from_show"
 
       .comments
         - if @comments
