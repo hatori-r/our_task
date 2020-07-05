@@ -8,7 +8,8 @@
     padding: 0;
     margin: 0;
     margin-top: 80px;
-    .sign-up {
+    .sign-up,
+    .login {
       width: 100%;
       margin-top: 20px;
       margin-bottom: 20px;
@@ -23,7 +24,7 @@
       margin: 0 auto;
       #error_explanation {
         h2 {
-          font-size: 16px;
+          font-size: 15px;
           color: red;
           text-align: center;
         }
@@ -31,40 +32,41 @@
           li {
             width: 75%;
             margin: 0 auto;
-            font-size: 16px;
+            font-size: 15px;
             color: red;
             text-align: left;
           }
         }
       }
       .field {
-        height: 100px;
+        height: 90px;
         em {
           display: block;
           height: 40px;
           width: 65%;
           line-height: 40px;
           color: #535353;
+          font-size: 16px;
         }
         input {
           display: block;
-          height: 46px;
+          height: 41px;
           width: 65%;
           padding: 0 20px;
           border: 1px solid #bbb;
-          border-radius: 50px;
+          border-radius: 15px;
           margin: 0 auto;
           font-size: 18px;
           outline: none;
           box-shadow: 0 0 3px #afafaf;
         }
-        .field_with_errors {
-          // position: relative;
-          input {
-            // position: absolute;
-            // top: -20px;
-            // left: 77px;
-          }
+        .remember_me-label {
+          margin-top: 30px;
+          text-align: center;
+        }
+        .remember_me {
+          height: 30px;
+          width: 30px;
         }
       }
       .actions {
