@@ -1,6 +1,7 @@
-// -----flash_message(good_task)-----
-// クリックで発火
 $(function() {
+  // -----flash_message(good_task)-----
+  // クリックで発火
+  $(function() {
   $('.good_task').click(function() {
     $('.good_task').slideUp(500);
   });
@@ -29,3 +30,4 @@ $(function() {
   }, 5000);
 });
 // -------------------------------
+})

@@ -46,7 +46,7 @@
         - else
           %li
             .like-none
-              = link_to task_likes_path(id: t.id, task_id: t.id), id: "like_btn", method: :post do
+              = link_to task_likes_path(id: t.id, task_id: t.id), method: :post do
                 -# -----↓非同期処理の記述↓-----
                 -# = link_to task_likes_path(id: t.id, task_id: t.id), method: :post, remote: true do
                 -# -----↑非同期処理の記述↑-----
