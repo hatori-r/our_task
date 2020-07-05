@@ -96,6 +96,7 @@
   background: #fff;
   border: 0.5px solid #ddd;
   margin-bottom: 80px;
+  box-shadow: 0 0 2px #ccc;
 }
 
 .task-user {
@@ -187,7 +188,6 @@
 .limit-date {
   height: 100%;
   border-top: 0.5px solid #ddd;
-  border-bottom: 0.5px solid #ddd;
   line-height: 120px;
   font-size: 20px;
   font-weight: bold;
@@ -209,7 +209,6 @@
   height: 120px;
   font-size: 20px;
   border-top: 0.5px solid #ddd;
-  border-bottom: 0.5px solid #ddd;
   position: relative;
 }
 
@@ -284,6 +283,7 @@
   height: 100%;
   display: flex;
   justify-content: flex-end;
+  border-top: 0.5px solid #ddd;
   ul {
     display: flex;
     li {

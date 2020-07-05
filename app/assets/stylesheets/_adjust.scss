@@ -107,7 +107,7 @@ body {
 }
 
 .update_task {
-  background: #fabe19;
+  background: #faab19;
   height: 60px;
   // width: calc(100% - 200px);
   // max-width: 880px;
@@ -127,13 +127,13 @@ body {
   margin: auto;
   z-index: 1;
   &:hover {
-    background: #fccb47;
+    background: #fab83f;
     transition: background 0.2s;
   }
 }
 
 .delete_task {
-  background: #f05b47;
+  background: #afafaf;
   height: 60px;
   width: 100%;
   line-height: 60px;
@@ -146,7 +146,7 @@ body {
   position: fixed;
   z-index: 1;
   &:hover {
-    background: #f57362;
+    background: #bbb;
     transition: background 0.2s;
   }
 }
