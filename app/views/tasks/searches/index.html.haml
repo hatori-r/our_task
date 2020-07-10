@@ -4,7 +4,7 @@
       = f.text_field :keyword, placeholder: "Search for tasks", class: "search-input"
       = f.button type: "submit", style: 'border-style: none;', class: "search-btn" do
         %i.fas.fa-search
-  .contents.row
+  .contents-row
     - @tasks.each do |t|
       = render partial: "tasks/task", locals: { t: t }
     = paginate(@tasks)
