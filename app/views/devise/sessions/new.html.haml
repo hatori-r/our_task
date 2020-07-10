@@ -1,6 +1,10 @@
 .contents.row
   .container
     %h2.login Log in
+    .container__easy-login
+      = link_to  new_user_registration_path, class: "easy-login-btn" do
+        簡単ログイン
+        %i.fas.fa-sign-in-alt
     .container__inner
       = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
         .field
@@ -15,3 +19,5 @@
             = f.check_box :remember_me, class: "remember_me"
         .actions
           = f.submit "Log in"
+        .transition-signin
+          = link_to "Sign in", new_user_registration_path

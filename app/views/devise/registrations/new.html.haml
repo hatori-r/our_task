@@ -1,4 +1,5 @@
-.welcome our task へようこそ！
+.welcome
+  our task へようこそ！
 .contents.row
   .container
     %h2.sign-up Sign up
@@ -9,18 +10,15 @@
           %em ニックネーム (最大8文字まで)
           = f.text_field :nickname, autofocus: true, maxlength: "8", id: "nickname", placeholder: "ニックネームを入力"
         .field
-          -# = f.label :email
           %em メールアドレス
           = f.email_field :email, placeholder: "メールアドレスを入力"
         .field
-          -# = f.label :password
           %em パスワード
           - if @validatable
             %em
               (#{@minimum_password_length} characters minimum)
           = f.password_field :password, autocomplete: "off", placeholder: "パスワードを入力"
         .field
-          -# = f.label :password_confirmation
           %em 確認用パスワード
           = f.password_field :password_confirmation, autocomplete: "off", placeholder: "確認用パスワードを入力"
         .actions
