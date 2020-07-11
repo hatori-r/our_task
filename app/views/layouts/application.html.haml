@@ -8,33 +8,26 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = javascript_pack_tag 'hello_vue'
+    %link{href: "https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c", rel: "stylesheet"}/
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"}
   %body
-    .title-bar
-      .title-box
-        .title-box-inner
-          .title-name
-            %a(href="/")
-              .our-task our task
-          - if user_signed_in?
-            %ul.user-sign-in
-              %li
-                %a#current_user.new(href="/users/#{current_user.id}")
-                  %span#current_user.new= current_user.nickname
-              %li
-                = link_to "Log Out", destroy_user_session_path, method: :delete, class: 'log-out'
-          - else
-            %ul.user-sign-in
-              %li
-                = link_to "Sign up", new_user_registration_path, class: 'new', id: 'up'
-              %li
-                = link_to "Log in", new_user_session_path, class: 'log-in'
-    .notification
-      - flash.each do |key, value|
-        = content_tag :div, value, class: key
+    .overlay
+      .btn_area
+        .btn_area__top
+          %h1
+            はじめてのログイン
+          %p
+            あらためて、our taskへようこそ
+            %br/
+            まずはじめにみんなにタスクをシェアしてみましょう！
+        .btn_area__mid
+          = image_tag asset_path("/images/share_task.png"), style: "height: 220px; width: 260px;", class: "share_task"
+          
+        .btn_area__low
+          = link_to "taskをシェアしてみる", "/tasks/new", class: "first-task"
+          %button TOPへ
+    = render "layouts/title_ber"
+    = render "layouts/notification"
     = yield
-%footer
-  Copyright
-  %span.copyright © 
-  2020 our task All Rights Reserved.
-  %a.remove-top(href="/")
-    %i.far.fa-caret-square-up
+= render "layouts/footer"

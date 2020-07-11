@@ -1,4 +1,3 @@
 $(function() {
-  console.log('hello')
-  $('.first-access').hide().fadeIn(2000);
+  $('.first-wapper').hide().fadeIn(2000);
 })
