@@ -3,6 +3,7 @@
   margin: 0 auto;
   font-size: 18px;
   color: #333;
+  font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;;
 }
 
 a {
@@ -52,6 +53,7 @@ body {
   color: #f5f5f5;
   font-weight: bold;
   font-size: 35px;
+  letter-spacing: 0.02em;
 }
 
 .user-sign-in {
@@ -70,6 +72,7 @@ body {
   text-align: center;
   color: #f5f5f5;
   display: block;
+  letter-spacing: 0.02em;
 }
 
 .new:hover {
@@ -103,6 +106,7 @@ body {
   font-size: 22px;
   text-shadow: 1px 1px 5px #7e7e7e;
   color: #f5f5f5;
+  font-family: "M PLUS Rounded 1c";
   cursor: pointer;
   position: fixed;
   z-index: 1;
@@ -114,7 +118,7 @@ body {
 }
 
 .update_task {
-  background: #ffc115;
+  background: #f5df64f5;
   height: 60px;
   width: 100%;
   border: 1px solid #bbb;
@@ -124,13 +128,14 @@ body {
   font-size: 22px;
   text-shadow: 1px 1px 5px #7e7e7e;
   color: #f5f5f5;
+  font-family: "M PLUS Rounded 1c";
   cursor: pointer;
   position: fixed;
   margin: auto;
   z-index: 1;
   transition: background 0.2s;
   &:hover {
-    background: #ffc72c;
+    background: #ece1a2ee;
     transition: background 0.2s;
   }
 }
@@ -146,6 +151,7 @@ body {
   font-size: 22px;
   text-shadow: 1px 1px 5px #5c5c5c;
   color: #f5f5f5;
+  font-family: "M PLUS Rounded 1c";
   cursor: pointer;
   position: fixed;
   z-index: 1;

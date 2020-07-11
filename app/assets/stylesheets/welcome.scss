@@ -1,12 +1,14 @@
-.first-access-wapper {
-  height: 100vh;
-  width: 100%;
-  min-height: 100vh;
-  width: calc(100% - 200px);
-  max-width: 880px;
-  min-width: 810px;
-  margin: 0 auto;
-  display: flex;
+.first-wapper {
+  background-image: linear-gradient(#f5f5f5, #c0f0d9, #f5f5f5);
+  .first-access-wapper {
+    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
+    width: calc(100% - 200px);
+    max-width: 880px;
+    min-width: 810px;
+    margin: 0 auto;
+    display: flex;
     .wapper-left {
       height: 100%;
       width: 20%;
@@ -14,8 +16,20 @@
       .calender {
         display: block;
         position: absolute;
-        top: 220px;
-        right: 30px;
+        top: 80px;
+        left: 0;
+      }
+      .books {
+        display: block;
+        position: absolute;
+        right: 20px;
+        bottom: 500px;
+      }
+      .marketing {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 300px;
       }
     }
     .wapper-center {
@@ -26,16 +40,20 @@
         &__upper {
           margin: 0 auto;
           .greeting {
+            width: 70%;
+            margin: 0 auto;
             &__top {
-              color: #555;
+              color: #3f3f3f;
               font-weight: bold;
               font-size: 3rem;
+              font-family: "M PLUS Rounded 1c";
             }
             &__mid {
-              color: #555;
+              color: #3f3f3f;
               font-weight: bold;
               font-size: 2.5rem;
               text-align: right;
+              font-family: "M PLUS Rounded 1c";
             }
           }
         }
@@ -48,18 +66,24 @@
             line-height: 60px;
             &__top {
               font-size: 20px;
+              color: #555;
+              font-family: "M PLUS Rounded 1c";
             }
             &__mid {
               font-size: 20px;
+              color: #555;
+              font-family: "M PLUS Rounded 1c";
             }
             &__low {
               font-size: 20px;
+              color: #555;
+              font-family: "M PLUS Rounded 1c";
             }
           }
         }
         &__low {
           margin-top: 50px;
-          a {
+          .first-access-btn {
             display: block;
             background: #35495E;
             height: 60px;
@@ -89,10 +113,20 @@
       height: 100%;
       width: 20%;
       position: relative;
+      .fitness {
+        display: block;
+        position: absolute;
+        top: 150px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+      }
       .computer {
         display: block;
         position: absolute;
         bottom: 350px;
+        right: 0;
       }
     }
   }
+}
