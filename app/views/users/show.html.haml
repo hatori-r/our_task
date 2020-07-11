@@ -1,12 +1,42 @@
 .users
-  .my-page-top
-    My page
-
-  = @nickname
-  さんのタスク一覧
-
-  - @tasks.each do |t|
-    = render partial: "tasks/task", locals: { t: t }
-  = paginate(@tasks)
-
-  = link_to "TOP", "/", class: "my-page"
+  .users__top
+    .user-info
+      .user-info__left
+        .profile-image
+          img
+      .user-info__center
+      .user-info__right
+        .info-right
+          .info-right__name
+            .name
+              = @nickname
+            .edit
+              = link_to "プロフィールを編集", "#"
+          .info-right__follow
+            .task-count
+              タスク
+              3
+              -# = @task.likes.size
+              件
+            .following
+              フォロー中
+              5
+              人
+            .follower
+              フォロワー
+              5
+              人
+          .info-right__profile
+            .profile
+              profile
+            .introduce
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo beatae et sint? In consequuntur voluptate maiores adipisci est deleniti vel consectetur, iste, iusto repudiandae amet aut, dolore at quos?
+  .users__low
+    .inner
+      = @nickname
+      さんのタスク一覧
+    .lower
+      - @tasks.each do |t|
+        = render partial: "tasks/task", locals: { t: t }
+      = paginate(@tasks)
+      = link_to "TOP", "/", class: "my-page"

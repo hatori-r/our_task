@@ -71,7 +71,7 @@
     .container
       - if current_user
         = form_with(model: [@task, @comment], local: true) do |f|
-          = f.text_field :text, placeholder: "a comment", rows: "2", class: "container__text-area"
+          = f.text_field :text, placeholder: "a comment", rows: "2", class: "container__text-area", required: ""
           = f.button type: "submit", class: "container__submit" do
             %i.far.fa-paper-plane
       - else

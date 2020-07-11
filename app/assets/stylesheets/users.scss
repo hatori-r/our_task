@@ -5,4 +5,95 @@
   max-width: 880px;
   min-width: 810px;
   margin: 0 auto;
+  &__top {
+    background: #fff;
+    height: 300px;
+    width: 100%;
+    box-shadow: 0 0 2px #aaa;
+    .user-info {
+      height: 100%;
+      margin-top: 50px;
+      display: flex;
+      &__left {
+        height: 100%;
+        width: 250px;
+        .profile-image {
+          height: 230px;
+          width: 230px;
+          margin: 0 auto;
+          display: grid;
+          place-items: center;
+        }
+      }
+      &__center {
+        height: 100%;
+        width: 30px;
+      }
+      &__right {
+        height: 100%;
+        flex: 1;
+        .info-right {
+          &__name {
+            height: 50px;
+            margin-top: 20px;
+            display: flex;
+            .name {
+              flex: 1;
+              line-height: 50px;
+              font-size: 1.8em;
+            }
+            .edit {
+              width: 300px;
+              line-height: 50px;
+            }
+          }
+          &__follow {
+            height: 50px;
+            margin-top: 10px;
+            display: flex;
+            .task-count {
+              flex: 1;
+              text-align: left;
+              line-height: 50px;
+              font-size: 16px;
+            }
+            .following {
+              flex: 1;
+              text-align: left;
+              line-height: 50px;
+              font-size: 16px;
+            }
+            .follower {
+              flex: 1;
+              text-align: left;
+              line-height: 50px;
+              font-size: 16px;
+            }
+          }
+          &__profile {
+            margin-top: 5px;
+            .profile {
+              padding-left: 10px;
+            }
+            .introduce {
+              height: 110px;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__low {
+    width: 100%;
+    .inner {
+      height: 150px;
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 150px;
+    }
+    .lower {
+
+    }
+  }
 }

@@ -56,7 +56,7 @@
     }
     &__submit {
       height: 180px;
-      margin-top: 50px;
+      margin-top: 30px;
       input {
         background: #35495E;
         display: block;
@@ -75,14 +75,14 @@
         }
       }
       a {
-        background: #efefef;
+        background-color: #efefef;
         display: block;
         height: 50px;
         width: 150px;
         border-radius: 50px;
         border: none;
         margin: 0 auto;
-        margin-top: 25px;
+        margin-top: 40px;
         color: #afafaf;
         text-align: center;
         line-height: 50px;
@@ -92,8 +92,9 @@
         transition: box-shadow 0.1s;
         cursor: pointer;
         &:hover {
-          background: #fd5959;
+          background-color: #fd5959;
           color: #fff;
+          font-weight: bold;
           box-shadow: 1px 1px 10px #aaa;
           transition: background-color 0.1s;
           transition: color 0.1s;
