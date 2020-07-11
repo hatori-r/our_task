@@ -1,14 +1,1 @@
-.contents.row
-  .container
-    = form_with(model: @task, local: true) do |f|
-      %h3
-        Share task
-      = current_user.nickname
-      さん
-      = f.text_area :task, placeholder: "task" , rows: "10", required: ""
-      = f.select :state, Task.states.keys, { required: "" }
-      %label Task State
-      .input-field
-      %div
-      = f.date_field :limit_date, required: ""
-      = f.submit "SEND" 
+= render partial: "tasks/post_task"
