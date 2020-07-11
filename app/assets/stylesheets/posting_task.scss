@@ -1,0 +1,105 @@
+.container-inner {
+  display: grid;
+  place-items: center;
+  .posting-task {
+    height: 180px;
+    font-size: 30px;
+    line-height: 180px;
+    text-align: center;
+    font-weight: bold;
+    &__task-content {
+      textarea {
+        height: 120px;
+        min-height: 120px;
+        max-height: 120px;
+        width: 470px;
+        min-width: 470px;
+        max-width: 470px;
+        padding: 15px 15px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        outline: none;
+        box-shadow: 1px 1px 3px #ccc;
+      }
+    }
+    &__task-state {
+      height: 50px;
+      margin-top: 30px;
+      display: flex;
+      label {
+        display: block;
+        padding: 0 10px;
+        margin: 0;
+        line-height: 50px;
+      }
+      select {
+        width: 140px;
+        padding-left: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        outline: none;
+        box-shadow: 1px 1px 3px #ccc;
+        cursor: pointer;
+      }
+      .adjust-space {
+        flex: 1;
+      }
+      input {
+        width: 180px;
+        padding-left: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        outline: none;
+        box-shadow: 1px 1px 3px #ccc;
+        cursor: pointer;
+      }
+    }
+    &__submit {
+      height: 180px;
+      margin-top: 50px;
+      input {
+        background: #35495E;
+        display: block;
+        height: 50px;
+        width: 150px;
+        border-radius: 50px;
+        border: none;
+        margin: 0 auto;
+        color: #f5f5f5;
+        outline: none;
+        transition: box-shadow 0.3s;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 1px 1px 10px #aaa;
+          transition: box-shadow 0.1s;
+        }
+      }
+      a {
+        background: #efefef;
+        display: block;
+        height: 50px;
+        width: 150px;
+        border-radius: 50px;
+        border: none;
+        margin: 0 auto;
+        margin-top: 25px;
+        color: #afafaf;
+        text-align: center;
+        line-height: 50px;
+        outline: none;
+        transition: background-color 0.1s;
+        transition: color 0.1s;
+        transition: box-shadow 0.1s;
+        cursor: pointer;
+        &:hover {
+          background: #fd5959;
+          color: #fff;
+          box-shadow: 1px 1px 10px #aaa;
+          transition: background-color 0.1s;
+          transition: color 0.1s;
+          transition: box-shadow 0.1s;
+        }
+      }
+    }
+  }
+}

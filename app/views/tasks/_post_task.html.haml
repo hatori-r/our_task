@@ -3,7 +3,7 @@
     .container-inner
       = form_with(model: @task, local: true) do |f|
         .posting-task
-          Edit task
+          Share task
         .posting-task__task-content
           = f.text_area :task, placeholder: "taskを入力してください" , required: ""
         .posting-task__task-state
@@ -12,5 +12,4 @@
           .adjust-space
           = f.date_field :limit_date, required: ""
         .posting-task__submit
-          = f.submit "SEND"
-          = link_to "delete", task_path(@task.id), method: :delete, data: { confirm: '本当に削除しますか？' }
+          = f.submit "SEND" 
