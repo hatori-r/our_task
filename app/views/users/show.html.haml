@@ -20,6 +20,21 @@
                   %p
                     プロフィール編集
               - else
+                - unless current_user == @user
+                  - if current_user.following?(@user)
+                    = form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }) do |f|
+                      = f.hidden_field :follow_id, value: @user.id
+                      = f.button type: "submit", class: 'follow-now' do
+                        %p
+                          フォロー中
+                        %i.fas.fa-user-check
+                  - else
+                    = form_for(current_user.relationships.build) do |f|
+                      = f.hidden_field :follow_id, value: @user.id
+                      = f.button type: "submit", class: 'following' do
+                        %p
+                          フォロー
+                        %i.fas.fa-user
           .info-right__sns
             .twitter
               - if @user.twitter?
@@ -54,15 +69,15 @@
             .task-count
               タスク
               3
-              -# = @task.likes.size
+              -# = task.task.count
               件
             .following
               フォロー中
-              5
+              = @user.followings.count
               人
             .follower
               フォロワー
-              5
+              = @user.followers.count
               人
           .info-right__profile
             .profile
