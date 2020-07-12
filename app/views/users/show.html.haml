@@ -3,7 +3,10 @@
     .user-info
       .user-info__left
         .profile-image
-          img
+          - if @user.image?
+            = image_tag @user.image.url, style: "height: 230px; width: 230px; border-radius: 50%;"
+          - else
+            %i.far.fa-user-circle
       .user-info__center
       .user-info__right
         .info-right
@@ -30,7 +33,7 @@
             .mysite-logo
               %i.fas.fa-home
             .mysite
-              https://hatoriblog.com
+              = @site
           .info-right__follow
             .task-count
               タスク
@@ -49,7 +52,7 @@
             .profile
               profile
             .introduce
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo beatae et sint? In consequuntur voluptate maiores adipisci est deleniti vel consectetur, iste, iusto repudiandae amet aut, dolore at quos?
+              = @profile
   .users__low
     .select-tabs
       .inner-tabs.tab

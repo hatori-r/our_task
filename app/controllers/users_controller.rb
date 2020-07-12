@@ -8,9 +8,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # unless @user == current_user
-    #   redirect_to user_path(@user)
-    # end
+    unless @user == current_user
+      redirect_to user_path(@user)
+    end
   end
   
   def update
@@ -25,6 +25,9 @@ class UsersController < ApplicationController
   
   def show
     @nickname = @user.nickname
+    @profile = @user.profile
+    @site = @user.site
+    @image = @user.image
     @tasks = @user.tasks.order("created_at DESC").page(params[:page]).per(10)
   end
   
@@ -39,5 +42,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.fetch(:user, {}).permit(:nickname)
+    params.require(:user).permit(:email, :password, :password_confirmation, :nickname, :profile, :site, :image)
   end
 end

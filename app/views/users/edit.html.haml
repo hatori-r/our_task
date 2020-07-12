@@ -1,9 +1,39 @@
 .contents.row
   .container
     .container-inner
-      .container-inner__nav
       .container-inner__main
         = form_with model: @user, local: true do |f|
-          .user_nickname
-            = f.text_field :nickname
-            = f.submit "更新"
+          .user-image
+            .user-image__left
+              - if @user.image?
+                = image_tag @user.image.url, style: "height: 150px; width: 150px; border-radius: 50%;"
+              - else
+                %i.far.fa-user-circle
+            .user-image__right
+              %label
+                .dipslay-hidden
+                  = f.file_field :image, accept: 'image/jpeg, image/gif, image/png'
+                .select-image
+                  プロフィール写真を変更
+          .user-nickname
+            .user-nickname__left
+              ニックネーム
+            .user-nickname__right
+              = f.text_field :nickname
+          .user-email
+            .user-email__left
+              メールアドレス
+            .user-email__right
+              = f.text_field :email
+          .user-profile
+            .user-profile__left
+              プロフィール
+            .user-profile__right
+              = f.text_area :profile
+          .user-site
+            .user-site__left
+              ウェブサイト
+            .user-site__right
+              = f.text_field :site
+          .user-submit
+            = f.submit "更新", class: "user-submit__btn"
