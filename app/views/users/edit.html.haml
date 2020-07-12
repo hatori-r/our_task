@@ -1,0 +1,9 @@
+.contents.row
+  .container
+    .container-inner
+      .container-inner__nav
+      .container-inner__main
+        = form_with model: @user, local: true do |f|
+          .user_nickname
+            = f.text_field :nickname
+            = f.submit "更新"

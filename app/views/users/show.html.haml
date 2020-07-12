@@ -11,7 +11,26 @@
             .name
               = @nickname
             .edit
-              = link_to "プロフィールを編集", "#"
+              - if user_signed_in? && @user == current_user
+                = link_to edit_user_path(current_user) do
+                  %i.fas.fa-user-cog
+                  %p
+                    プロフィール編集
+              - else
+          .info-right__sns
+            .twitter
+              = link_to "https://www.twitter.com" do
+                %i.fab.fa-twitter
+            .facebook
+              = link_to "https://www.facebook.com" do
+                %i.fab.fa-facebook
+            .instagram
+              = link_to "https://www.instagram.com" do
+                %i.fab.fa-instagram
+            .mysite-logo
+              %i.fas.fa-home
+            .mysite
+              https://hatoriblog.com
           .info-right__follow
             .task-count
               タスク
@@ -32,11 +51,19 @@
             .introduce
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo beatae et sint? In consequuntur voluptate maiores adipisci est deleniti vel consectetur, iste, iusto repudiandae amet aut, dolore at quos?
   .users__low
-    .inner
-      = @nickname
-      さんのタスク一覧
-    .lower
+    .select-tabs
+      .inner-tabs.tab
+        %a.task-tab.active(href="#tab1")
+          = @nickname
+          さんのタスク
+        %a.like-tab(href="#tab2")
+          いいねしたタスク
+    #tab1.user-tasks.tabContents.active
       - @tasks.each do |t|
         = render partial: "tasks/task", locals: { t: t }
       = paginate(@tasks)
+    #tab2.like-tasks.tabContents
+      いいね一覧
+      = paginate(@tasks)
+    .top-page
       = link_to "TOP", "/", class: "my-page"
