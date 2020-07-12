@@ -9,8 +9,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :nickname, null:false
       t.string :profile
       t.string :site
+      t.string :twitter
+      t.string :facebook
+      t.string :instagram
       t.text :image
-
+      
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
