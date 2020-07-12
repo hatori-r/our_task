@@ -26,6 +26,9 @@ class UsersController < ApplicationController
   def show
     @nickname = @user.nickname
     @profile = @user.profile
+    @twitter = @user.twitter
+    @facebook = @user.facebook
+    @instagram = @user.instagram
     @site = @user.site
     @image = @user.image
     @tasks = @user.tasks.order("created_at DESC").page(params[:page]).per(10)
@@ -42,6 +45,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.fetch(:user, {}).permit(:nickname)
-    params.require(:user).permit(:email, :password, :password_confirmation, :nickname, :profile, :site, :image)
+    params.require(:user).permit(:email, :password, :password_confirmation, :nickname, :profile, :site, :twitter, :facebook, :instagram, :image)
   end
 end

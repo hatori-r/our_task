@@ -22,18 +22,34 @@
               - else
           .info-right__sns
             .twitter
-              = link_to "https://www.twitter.com" do
-                %i.fab.fa-twitter
+              - if @user.twitter?
+                = link_to @twitter do
+                  %i.fab.fa-twitter
+              - else
+                %i.fab.fa-twitter.none
             .facebook
-              = link_to "https://www.facebook.com" do
-                %i.fab.fa-facebook
+              - if @user.facebook?
+                = link_to @facebook do
+                  %i.fab.fa-facebook
+              - else
+                %i.fab.fa-facebook.none
             .instagram
-              = link_to "https://www.instagram.com" do
-                %i.fab.fa-instagram
+              - if @user.instagram?
+                = link_to @instagram do
+                  %i.fab.fa-instagram
+              - else
+                %i.fab.fa-instagram.none
             .mysite-logo
-              %i.fas.fa-home
+              - if @user.site?
+                %i.fas.fa-home
+              - else
+                %i.fas.fa-home.none
             .mysite
-              = @site
+              - if @user.site?
+                = @site
+              - else
+                .nil_date
+                  web site
           .info-right__follow
             .task-count
               タスク
@@ -52,7 +68,11 @@
             .profile
               profile
             .introduce
-              = @profile
+              - if @user.profile?
+                = @profile
+              - else
+                .nil_date
+                  profile
   .users__low
     .select-tabs
       .inner-tabs.tab
