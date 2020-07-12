@@ -1,12 +1,72 @@
 .users
-  .my-page-top
-    My page
-
-  = @nickname
-  さんのタスク一覧
-
-  - @tasks.each do |t|
-    = render partial: "tasks/task", locals: { t: t }
-  = paginate(@tasks)
-
-  = link_to "TOP", "/", class: "my-page"
+  .users__top
+    .user-info
+      .user-info__left
+        .profile-image
+          - if @user.image?
+            = image_tag @user.image.url, style: "height: 230px; width: 230px; border-radius: 50%;"
+          - else
+            %i.far.fa-user-circle
+      .user-info__center
+      .user-info__right
+        .info-right
+          .info-right__name
+            .name
+              = @nickname
+            .edit
+              - if user_signed_in? && @user == current_user
+                = link_to edit_user_path(current_user) do
+                  %i.fas.fa-user-cog
+                  %p
+                    プロフィール編集
+              - else
+          .info-right__sns
+            .twitter
+              = link_to "https://www.twitter.com" do
+                %i.fab.fa-twitter
+            .facebook
+              = link_to "https://www.facebook.com" do
+                %i.fab.fa-facebook
+            .instagram
+              = link_to "https://www.instagram.com" do
+                %i.fab.fa-instagram
+            .mysite-logo
+              %i.fas.fa-home
+            .mysite
+              = @site
+          .info-right__follow
+            .task-count
+              タスク
+              3
+              -# = @task.likes.size
+              件
+            .following
+              フォロー中
+              5
+              人
+            .follower
+              フォロワー
+              5
+              人
+          .info-right__profile
+            .profile
+              profile
+            .introduce
+              = @profile
+  .users__low
+    .select-tabs
+      .inner-tabs.tab
+        %a.task-tab.active(href="#tab1")
+          = @nickname
+          さんのタスク
+        %a.like-tab(href="#tab2")
+          いいねしたタスク
+    #tab1.user-tasks.tabContents.active
+      - @tasks.each do |t|
+        = render partial: "tasks/task", locals: { t: t }
+      = paginate(@tasks)
+    #tab2.like-tasks.tabContents
+      いいね一覧
+      = paginate(@tasks)
+    .top-page
+      = link_to "TOP", "/", class: "my-page"

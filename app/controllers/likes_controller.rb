@@ -1,4 +1,9 @@
 class LikesController < ApplicationController
+  def index
+    @tasks = Task.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+    @likes = Like.where(task_id: params[:task_id])
+  end
+
   def create
     # -----↓メモ↓-----
     # @like = current_user.like.create(task_id: params[:task_id])
