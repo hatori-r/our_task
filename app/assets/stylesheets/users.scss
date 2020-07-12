@@ -57,7 +57,7 @@
               font-size: 1.8em;
             }
             .edit {
-              width: 300px;
+              width: 330px;
               line-height: 50px;
               a {
                 height: 100%;
@@ -79,6 +79,66 @@
                 width: 130px;
                 margin: 0;
                 font-size: 16px;
+              }
+              .follow-now {
+                background: #fff;
+                height: 40px;
+                width: 150px;
+                border-radius: 7px;
+                border: 1px solid #ccc;
+                margin-top: 5px;
+                margin-left: 0;
+                margin-right: auto;
+                display: flex;
+                outline: none;
+                cursor: pointer;
+                transition: all 0.2s;
+                &:hover {
+                  transition: all 0.2s;
+                  background: #efefef;
+                }
+                p {
+                  font-weight: bold;
+                  line-height: 37px;
+                  flex: 1;
+                }
+                .fa-user-check {
+                  height: 100%;
+                  width: 40px;
+                  line-height: 37px;
+                  color: #0095f6;
+                  display: block;
+                }
+              }
+              .following {
+                background: #fff;
+                height: 40px;
+                width: 150px;
+                border-radius: 7px;
+                border: 1px solid #ccc;
+                margin-top: 5px;
+                margin-left: 0;
+                margin-right: auto;
+                display: flex;
+                outline: none;
+                cursor: pointer;
+                transition: all 0.2s;
+                &:hover {
+                  transition: all 0.2s;
+                  background: #efefef;
+                }
+                p {
+                  font-weight: bold;
+                  line-height: 37px;
+                  flex: 1;
+                }
+                .fa-user {
+                  height: 100%;
+                  width: 35px;
+                  padding-right: 5px;
+                  line-height: 37px;
+                  display: block;
+                }
               }
             }
           }
