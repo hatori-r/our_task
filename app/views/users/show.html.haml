@@ -34,7 +34,7 @@
                       = f.button type: "submit", class: 'following' do
                         %p
                           フォロー
-                        %i.fas.fa-user
+                        %i.fas.fa-user-plus
           .info-right__sns
             .twitter
               - if @user.twitter?
@@ -61,15 +61,15 @@
                 %i.fas.fa-home.none
             .mysite
               - if @user.site?
-                = @site
+                = link_to @site do
+                  = @site
               - else
                 .nil_date
                   web site
           .info-right__follow
             .task-count
               タスク
-              3
-              -# = task.task.count
+              = @user.tasks.count
               件
             .following
               フォロー中
@@ -94,14 +94,33 @@
         %a.task-tab.active(href="#tab1")
           = @nickname
           さんのタスク
+          (
+          = @user.tasks.size
+          件)
         %a.like-tab(href="#tab2")
           いいねしたタスク
-    #tab1.user-tasks.tabContents.active
-      - @tasks.each do |t|
-        = render partial: "tasks/task", locals: { t: t }
-      = paginate(@tasks)
-    #tab2.like-tasks.tabContents
-      いいね一覧
-      = paginate(@tasks)
+          (
+          = @user.like.size
+          件)
+    #tab1.tasks.user-tasks.tabContents.active
+      - if @user.tasks.size == 0
+        .task-zero
+          %p
+            投稿がありません
+          %i.fas.fa-tasks
+        - if user_signed_in? && @user == current_user
+          .post-task
+            = link_to "タスクをシェアする", new_task_path, class: "post-task__btn"
+      - else
+        - @tasks.each do |t|
+          = render partial: "tasks/task", locals: { t: t }
+        = paginate(@tasks)
+    #tab2.tasks.like-tasks.tabContents
+      - if @user.like.size == 0
+        .like-zero
+          %p
+            いいねしたタスクはありません
+          %i.fas.fa-tasks
+      - else
     .top-page
-      = link_to "TOP", "/", class: "my-page"
+      = link_to "TOP", "/", class: "return-top"

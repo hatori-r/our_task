@@ -5,7 +5,7 @@
   max-width: 880px;
   min-width: 810px;
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 65px;
   &__top {
     height: 350px;
     width: 100%;
@@ -132,10 +132,10 @@
                   line-height: 37px;
                   flex: 1;
                 }
-                .fa-user {
+                .fa-user-plus {
                   height: 100%;
                   width: 35px;
-                  padding-right: 5px;
+                  padding-right: 3px;
                   line-height: 37px;
                   display: block;
                 }
@@ -231,9 +231,12 @@
               }
             }
             .mysite {
-              flex: 1;
-              font-size: 16px;
-              line-height: 40px;
+              a {
+                flex: 1;
+                display: block;
+                font-size: 16px;
+                line-height: 40px;
+              }
               .nil_date {
                 font-size: 16px;
                 font-style: italic;
@@ -287,14 +290,13 @@
   &__low {
     width: 100%;
     .select-tabs {
-      height: 70px;
+      height: 50px;
       .inner-tabs {
         height: 50px;
         border-radius: 7px;
         border: 1px solid #ccc;
         box-shadow: 0 0 2px #aaa;
         margin-top: 20px;
-        margin-bottom: 20px;
         background: #fff;
         text-align: center;
         line-height: 50px;
@@ -327,6 +329,68 @@
         }
       }
     }
+    .user-tasks {
+      .task-zero {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        line-height: 100px;
+          p {
+            font-weight: bold;
+            font-size: 20px;
+          }
+          .fa-tasks {
+            width: 50px;
+            margin: 0;
+            line-height: 100px;
+            text-align: center;
+            font-size: 24px;
+          }
+        }
+        .post-task {
+          &__btn {
+            display: block;
+            background: #35495E;
+            height: 60px;
+            width: 280px;
+            border-radius: 50px;
+          margin: 0 auto;
+          color: #f5f5f5;
+          font-weight: bold;
+          line-height: 60px;
+          text-align: center;
+          transition: all 0.2s;
+          &:hover {
+            background: #374c63;
+            font-size: 18.5px;
+            box-shadow: 0 0 10px 3px silver;
+            transition: all 0.2s;
+          }
+        }
+      }
+    }
+    .like-tasks {
+      .like-zero {
+        height: 100px;
+        width: 100%;
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        line-height: 100px;
+        p {
+          font-weight: bold;
+          font-size: 20px;
+        }
+        .fa-tasks {
+          width: 50px;
+          margin: 0;
+          line-height: 100px;
+          text-align: center;
+          font-size: 24px;
+        }
+      }
+    }
     .tabContents {
       display: none;
     }
@@ -334,7 +398,25 @@
       display: block;
     }
     .top-page {
-      margin-top: 50px;
+      .return-top {
+        display: block;
+        background: #35495E;
+        height: 60px;
+        width: 280px;
+        border-radius: 50px;
+        margin: 0 auto;
+        color: #f5f5f5;
+        font-weight: bold;
+        line-height: 60px;
+        text-align: center;
+        transition: all 0.2s;
+        &:hover {
+          background: #374c63;
+          font-size: 18.5px;
+          box-shadow: 0 0 10px 3px silver;
+          transition: all 0.2s;
+        }
+      }
     }
   }
 }

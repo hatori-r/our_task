@@ -1,10 +1,15 @@
 .task-comment
-  .tasks
+  #comment-area.tasks
     .tasks-table
       .task-user
         %ul
           %li
-            %i.far.fa-user-circle
+            - if @task.user.image?
+              = link_to "/users/#{@task.user.id}", class: "image-a" do
+                = image_tag @task.user.image.url, class: "user-icon", id: "img_prev"
+            - else
+              = link_to "/users/#{@task.user.id}", class: "icon-a" do
+                %i.far.fa-user-circle
           %li
             %a.user-name{href: "/users/#{@task.user.id}"}
               %span.user-name= @task.user.nickname
@@ -60,10 +65,10 @@
           = @task.likes.size
       .comment-counts
         - if @task.comments.size == 0
-          %button.comment-circle-zero
+          %a.comment-circle-zero(href="#comment-area")
             %i.far.fa-comment-dots
         - else
-          %button.comment-circle
+          %a.comment-circle(href="#comment-area")
             %i.far.fa-comment-dots
         .counts
           = @task.comments.size
@@ -76,7 +81,7 @@
             %i.far.fa-paper-plane
       - else
         .ask-for-login
-          %p.ask-for-login__upper Please log in or register to comment.
+          %p.ask-for-login__upper コメントをするにはログインもしくはアカウント登録が必要です
           .ask-for-login__lower
             %i.fas.fa-sign-in-alt
         .login-form
@@ -84,11 +89,32 @@
           = link_to "Log in", new_user_session_path, class: "login_from_show"
 
       .comments
-        - if @comments
-          - @comments.each do |comment|
-            %p.comments__comment
-              %strong
-                %i.far.fa-user-circle
-                = link_to comment.user.nickname, "/users/#{comment.user_id}"
-                ：
-              = comment.text
+        - @comments.each do |c|
+          .comments__comment
+            -# - if c.user_id == c.task_id
+            - if @task.user_id == c.user.id
+              .owner
+                .owner-comment
+                  = c.text
+                .comment-owner
+                  = link_to c.user.nickname, "/users/#{c.user_id}", class: "user-name"
+                  - if c.user.image?
+                    = link_to "/users/#{c.user.id}", class: "image-a" do
+                      = image_tag c.user.image.url, class: "user-icon", id: "img_prev"
+                  - else
+                    = link_to "/users/#{c.user.id}", class: "icon-a" do
+                      %i.far.fa-user-circle
+            - else
+              .other-user
+                .comment-user
+                  - if c.user.image?
+                    = link_to "/users/#{c.user.id}", class: "image-a" do
+                      = image_tag c.user.image.url, class: "user-icon", id: "img_prev"
+                  - else
+                    = link_to "/users/#{c.user.id}", class: "icon-a" do
+                      %i.far.fa-user-circle
+                  = link_to c.user.nickname, "/users/#{c.user_id}", class: "user-name"
+                .a_comment
+                  = c.text
+    .top-page
+      = link_to "TOP", "/", class: "return-top"

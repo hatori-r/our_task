@@ -2,7 +2,12 @@
   .task-user
     %ul
       %li
-        %i.far.fa-user-circle
+        - if t.user.image?
+          = link_to "/users/#{t.user.id}", class: "image-a" do
+            = image_tag t.user.image.url, class: "user-icon", id: "img_prev"
+        - else
+          = link_to "/users/#{t.user.id}", class: "icon-a" do
+            %i.far.fa-user-circle
       %li
         %a.user-mame{href: "/users/#{t.user.id}"}
           %span.user-name= t.user.nickname
