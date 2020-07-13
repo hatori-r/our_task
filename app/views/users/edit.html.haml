@@ -26,12 +26,12 @@
               .user-nickname__left
                 ニックネーム
               .user-nickname__right
-                = f.text_field :nickname
+                = f.text_field :nickname, maxlength: "8"
             .user-email
               .user-email__left
                 メールアドレス
               .user-email__right
-                = f.text_field :email
+                = f.email_field :email
             .user-profile
               .user-profile__left
                 プロフィール
