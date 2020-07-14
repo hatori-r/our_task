@@ -76,17 +76,20 @@
                   web site
           .info-right__follow
             .task-count
-              タスク
-              = @user.tasks.count
-              件
+              = link_to "#task-list", class: "move_tasks-list" do
+                タスク
+                %b= @user.tasks.count
+                件
             .following
-              フォロー中
-              = @user.followings.count
-              人
+              = link_to "#" do
+                フォロー中
+                %b= @user.followings.count
+                人
             .follower
-              フォロワー
-              = @user.followers.count
-              人
+              = link_to "#" do
+                フォロワー
+                %b= @user.followers.count
+                人
           .info-right__profile
             .profile
               profile
@@ -96,7 +99,7 @@
               - else
                 .nil_date
                   profile
-  .users__low
+  #task-list.users__low
     .select-tabs
       .inner-tabs.tab
         %a.task-tab.active(href="#tab1")
