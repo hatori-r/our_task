@@ -6,10 +6,15 @@
           Share task
         .posting-task__task-content
           = f.text_area :task, placeholder: "taskを入力してください" , required: ""
-        .posting-task__task-state
-          %label Task State
-          = f.select :state, Task.states.keys, { required: "" }
-          .adjust-space
-          = f.date_field :limit_date, required: ""
+        .posting-task__info-bar
+          .state
+            Task Srate
+          .limit
+            Limit
+        .posting-task__input-task
+          .input-state
+            = f.select :state, Task.states.keys, { required: "" }
+          .input-limit
+            = f.date_field :limit_date, required: ""
         .posting-task__submit
           = f.submit "SEND" 
