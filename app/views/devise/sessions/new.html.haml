@@ -2,7 +2,8 @@
   .container
     %h2.login Log in
     .container__easy-login
-      = link_to  new_user_registration_path, class: "easy-login-btn" do
+      -# = link_to  new_user_registration_path, class: "easy-login-btn" do
+      = link_to  session_path(resource_name), class: "easy-login-btn" do
         簡単ログイン
         %i.fas.fa-sign-in-alt
     .container__inner
