@@ -273,8 +273,10 @@
   justify-content: flex-end;
   border-top: 0.5px solid #ddd;
   ul {
+    height: 100%;
     display: flex;
     li {
+      height: 100%;
       width: 50px;
       padding-top: 5px;
       .like-orange {
@@ -285,6 +287,7 @@
           line-height: 50px;
           text-align: center;
           color: #e0245e;
+          transition: text-shadow 0.1s;
           &:hover {
             text-shadow: 1px 1px 5px #ccc;
             transition: text-shadow 0.1s;
@@ -292,27 +295,49 @@
         }
       }
       .like-none {
-        .fa-thumbs-up {
+        a {
+          display: block;
+          .fa-thumbs-up {
+            height: 100%;
+            width: 100%;
+            font-size: 25px;
+            line-height: 50px;
+            text-align: center;
+            transition: text-shadow 0.1s;
+            &:hover {
+              text-shadow: 1px 1px 5px #ccc;
+              transition: text-shadow 0.1s;
+            }
+          }
+        }
+      }
+      a {
+        display: block;
+        .fa-comment-dots {
           height: 100%;
           width: 100%;
           font-size: 25px;
           line-height: 50px;
           text-align: center;
+          transition: text-shadow 0.1s;
           &:hover {
             text-shadow: 1px 1px 5px #ccc;
             transition: text-shadow 0.1s;
           }
         }
-      }
-      .fa-comment-dots {
-        height: 100%;
-        width: 100%;
-        font-size: 25px;
-        line-height: 50px;
-        text-align: center;
-        &:hover {
-          text-shadow: 1px 1px 5px #ccc;
+        .a-comments {
+          height: 100%;
+          width: 100%;
+          color: #64cffa;
+          font-size: 27px;
+          font-weight: bold;
+          line-height: 50px;
+          text-align: center;
           transition: text-shadow 0.1s;
+          &:hover {
+            text-shadow: 1px 1px 5px #f0f0f0;
+            transition: text-shadow 0.1s;
+          }
         }
       }
     }

@@ -140,6 +140,38 @@
                   display: block;
                 }
               }
+              .following {
+                background: #fff;
+                height: 40px;
+                width: 150px;
+                border-radius: 7px;
+                border: 1px solid #ccc;
+                margin-top: 5px;
+                margin-left: 0;
+                margin-right: auto;
+                display: flex;
+                outline: none;
+                cursor: pointer;
+                transition: all 0.2s;
+                &:hover {
+                  transition: all 0.2s;
+                  background: #efefef;
+                }
+                a {
+                  p {
+                    width: 36px;
+                  font-weight: bold;
+                  line-height: 37px;
+                  }
+                  .fa-user-plus {
+                    height: 100%;
+                    width: 35px;
+                    padding-right: 3px;
+                    line-height: 37px;
+                    display: block;
+                  }
+                }
+              }
             }
           }
           &__sns {
@@ -241,6 +273,7 @@
                 font-size: 16px;
                 font-style: italic;
                 color: #ccc;
+                line-height: 40px;
               }
             }
           }

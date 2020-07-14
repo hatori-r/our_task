@@ -61,8 +61,11 @@
           .like-none
             = link_to new_user_session_path do
               %i.far.fa-thumbs-up
-
       %li
-        %a(href="/tasks/#{t.id}")
-          %i.far.fa-comment-dots
+        - if t.comments.size == 0
+          %a(href="/tasks/#{t.id}")
+            %i.far.fa-comment-dots
+        - else
+          %a(href="/tasks/#{t.id}")
+            %i.far.fa-comment-dots.a-comments
     .adjustment-box
