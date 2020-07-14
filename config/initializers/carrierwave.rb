@@ -15,6 +15,7 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1'
     }
 
-  config.fog_directory  = 'our-task-2020-hatori'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/our-task-2020-hatori'
+    config.fog_directory  = 'our-task-2020-hatori'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/our-task-2020-hatori'
+  end
 end
