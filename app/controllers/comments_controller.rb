@@ -3,6 +3,13 @@ class CommentsController < ApplicationController
     comment = Comment.create(comment_params)
     redirect_to "/tasks/#{comment.task.id}"
   end
+  
+  def destroy
+    @task = Task.find(params[:task_id])
+    @comment = @task.comments.find(params[:id])
+    @comment.destroy
+    redirect_back(fallback_location: root_path)
+  end
 
   private
   def comment_params

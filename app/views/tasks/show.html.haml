@@ -94,9 +94,14 @@
             -# - if c.user_id == c.task_id
             - if @task.user_id == c.user.id
               .owner
-                .owner-comment
-                  = c.text
-                .comment-owner
+                .owner__owner-comment
+                  .a-comment
+                    = c.text
+                  .remove-comment
+                    - if user_signed_in? && c.user.id == current_user.id
+                      = link_to task_comment_path(task_id: @task, id: c.id), method: :delete, data: { confirm: '本当に削除しますか？' } do
+                        削除
+                .owner__owner-info
                   = link_to c.user.nickname, "/users/#{c.user_id}", class: "user-name"
                   - if c.user.image?
                     = link_to "/users/#{c.user.id}", class: "image-a" do
@@ -106,7 +111,7 @@
                       %i.far.fa-user-circle
             - else
               .other-user
-                .comment-user
+                .other-user__users-info
                   - if c.user.image?
                     = link_to "/users/#{c.user.id}", class: "image-a" do
                       = image_tag c.user.image.url, class: "user-icon", id: "img_prev"
@@ -114,7 +119,12 @@
                     = link_to "/users/#{c.user.id}", class: "icon-a" do
                       %i.far.fa-user-circle
                   = link_to c.user.nickname, "/users/#{c.user_id}", class: "user-name"
-                .a_comment
-                  = c.text
+                .other-user__users-comment
+                  .a-comment
+                    = c.text
+                  .remove-comment
+                    - if user_signed_in? && c.user.id == current_user.id
+                      = link_to task_comment_path(task_id: @task, id: c.id), method: :delete, data: { confirm: '本当に削除しますか？' } do
+                        削除
     .top-page
       = link_to "TOP", "/", class: "return-top"

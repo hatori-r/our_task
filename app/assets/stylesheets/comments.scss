@@ -160,10 +160,11 @@
 }
 
 .comments {
-  height: 300px;
+  height: 320px;
   margin-top: 30px;
   overflow: auto;
   &__comment {
+    height: 56px;
     margin-bottom: 15px;
     font-size: 16px;
     display: flex;
@@ -171,20 +172,47 @@
       display: flex;
       margin-right: 0;
       margin-left: auto;
-      .owner-comment {
-        // background: #86ffc2;
-        // background: #41b883;
-        // background: #55c500;
-        // background: #a7ec72;
-        background: #baf190;
-        padding: 0 20px;
-        border-radius: 50px;
-        color: #333;
-        // color: #fff;
-        line-height: 40px;
+      &__owner-comment {
+        height: 40px;
+        .a-comment {
+          // background: #86ffc2;
+          // background: #41b883;
+          // background: #55c500;
+          // background: #a7ec72;
+          background: #baf190;
+          padding: 0 20px;
+          border-radius: 50px;
+          font-size: 16px;
+          color: #333;
+          // color: #fff;
+          line-height: 40px;
+          cursor: pointer;
+        }
+        .remove-comment {
+          a {
+            height: 16px;
+            width: 40px;
+            display: block;
+            padding: 0 20px;
+            margin: 0 0 0 auto;
+            font-size: 12.5px;
+            text-align: center;
+            font-weight: bold;
+            color: #fd5959;
+          }
+        }
       }
-      .comment-owner {
+      &__owner-info {
+        height: 40px;
         display: flex;
+        .user-name {
+          display: block;
+          height: 40px;
+          padding: 0 10px;
+          font-size: 16px;
+          letter-spacing: 0.05em;
+          line-height: 40px;
+        }
         .image-a {
           display: block;
           padding: 5px;
@@ -194,67 +222,78 @@
             width: 30px;
             border-radius: 50%;
           }
-        }
-        .icon-a {
-          display: block;
-          .fa-user-circle {
-            width: 40px;
-            color: #ddd;
-            font-size: 24px;
-            text-align: center;
-            line-height: 41px;
+          .icon-a {
+            display: block;
+            .fa-user-circle {
+              width: 40px;
+              color: #ddd;
+              font-size: 24px;
+              text-align: center;
+              line-height: 41px;
+            }
           }
-        }
-        .user-name {
-          display: block;
-          height: 40px;
-          padding: 0 10px;
-          font-size: 18px;
-          letter-spacing: 0.05em;
-          line-height: 40px;
         }
       }
     }
     .other-user {
-      display: flex;
       margin-right: auto;
       margin-left: 0;
-      .comment-user {
-        display: flex;
-        .image-a {
-          display: block;
-          padding: 5px;
-          .user-icon {
-            display: block;
-            height: 30px;
-            width: 30px;
-            border-radius: 50%;
-          }
-        }
-        .icon-a {
-          display: block;
-          .fa-user-circle {
-            width: 40px;
-            color: #ddd;
-            font-size: 24px;
-            text-align: center;
-            line-height: 41px;
-          }
-        }
-        .user-name {
-          display: block;
+      display: flex;
+        &__users-info {
           height: 40px;
-          padding: 0 10px;
-          font-size: 18px;
-          letter-spacing: 0.05em;
-          line-height: 40px;
+          display: flex;
+          .image-a {
+            display: block;
+            padding: 5px;
+            .user-icon {
+              display: block;
+              height: 30px;
+              width: 30px;
+              border-radius: 50%;
+            }
+          }
+          .icon-a {
+            display: block;
+            .fa-user-circle {
+              width: 40px;
+              color: #ddd;
+              font-size: 24px;
+              text-align: center;
+              line-height: 40px;
+            }
+          }
+          .user-name {
+            display: block;
+            height: 40px;
+            padding: 0 10px;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            line-height: 40px;
+          }
         }
-      }
-      .a_comment {
-        background: #f1f1f1;
-        padding: 0 20px;
-        border-radius: 50px;
-        line-height: 40px;
+        &__users-comment {
+          height: 40px;
+          .a-comment {
+            background: #f1f1f1;
+            padding: 0 20px;
+            border-radius: 50px;
+            line-height: 40px;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          .remove-comment {
+            height: 16px;
+            a {
+              height: 100%;
+              width: 80px;
+              display: block;
+              margin: 0 auto 0 0;
+              font-size: 12px;
+              text-align: center;
+              font-weight: bold;
+              color: #fd5959;
+          }
+        }
       }
     }
   }
