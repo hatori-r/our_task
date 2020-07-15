@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :following, :followers]
 
   def index
   end
@@ -24,17 +24,23 @@ class UsersController < ApplicationController
   end
   
   def show
-    @nickname = @user.nickname
-    @profile = @user.profile
-    @twitter = @user.twitter
-    @facebook = @user.facebook
-    @instagram = @user.instagram
-    @site = @user.site
+    # @nickname = @user.nickname
+    # @profile = @user.profile
+    # @twitter = @user.twitter
+    # @facebook = @user.facebook
+    # @instagram = @user.instagram
+    # @site = @user.site
     @image = @user.image
     @tasks = @user.tasks.order("created_at DESC").page(params[:page]).per(10)
   end
   
   def destroy
+  end
+
+  def following
+  end
+
+  def followers
   end
   
   private

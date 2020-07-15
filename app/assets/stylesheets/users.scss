@@ -52,9 +52,13 @@
             display: flex;
             .name {
               flex: 1;
-              padding-left: 10px;
-              line-height: 43px;
-              font-size: 1.8em;
+              a {
+                display: block;
+                height: 100%;
+                padding-left: 10px;
+                line-height: 43px;
+                font-size: 1.8em;
+              }
             }
             .edit {
               width: 330px;
