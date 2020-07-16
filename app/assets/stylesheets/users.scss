@@ -208,13 +208,19 @@
             }
             .facebook {
               width: 50px;
+              display: grid;
+              place-items: center;
               .fa-facebook {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
                 color: #1877f2;
                 font-size: 30px;
-                transition: text-shadow 0.1s;
+                line-height: 30px;
+                transition: box-shadow 0.1s;
                 &:hover {
-                  text-shadow: 1px 1px 5px #ccc;
-                  transition: text-shadow 0.1s;
+                  box-shadow: 0 0 7px #aaa;
+                  transition: box-shadow 0.1s;
                 }
               }
               .none {

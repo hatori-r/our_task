@@ -111,17 +111,17 @@
       padding-left: 5px;
       a {
         height: 100%;
-        display: block;
+        display: grid;
+        place-items: center;
         .fa-facebook {
-          height: 50px;
-          width: 50px;
-          display: grid;
-          place-items: center;
-          font-size: 22px;
+          height: 23px;
+          width: 23px;
+          border-radius: 50%;
+          font-size: 23px;
           color: #1877f2;
           transition: all 0.1s;
           &:hover {
-            text-shadow: 1px 1px 5px #aaa;
+            box-shadow: 0 0 7px #aaa;
             transition: all 0.1s;
           }
         }
@@ -131,7 +131,7 @@
         width: 50px;
         display: grid;
         place-items: center;
-        font-size: 22px;
+        font-size: 23px;
         color: #eee;
         &:hover {
           text-shadow: none;
@@ -190,7 +190,7 @@
           color: #555;
           transition: all 0.1s;
           &:hover {
-            text-shadow: 1px 1px 5px #aaa;
+            text-shadow: 1px 1px 5px #ccc;
             transition: all 0.1s;
           }
         }
