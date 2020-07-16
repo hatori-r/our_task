@@ -27,16 +27,30 @@ our taskはタスクを他のユーザーにシェアできるアプリケーシ
 <img width="1680" alt="post-task" src="https://user-images.githubusercontent.com/63530890/87651698-2f3c8400-c78e-11ea-904c-359cd7b0a347.png">
 
 ### タスクへのコメント
-### タスクへのいいね
-### ユーザーフォロー
+<img width="1680" alt="a-comment" src="https://user-images.githubusercontent.com/63530890/87653932-3618c600-c791-11ea-88ce-c76924d7624b.png">
 
+### タスクへのいいね
+<img width="1680" alt="like-task" src="https://user-images.githubusercontent.com/63530890/87654095-68c2be80-c791-11ea-95c7-6ea9c96563b0.png">
+
+### ユーザーフォロー
+<img width="1680" alt="follow" src="https://user-images.githubusercontent.com/63530890/87654405-cfe07300-c791-11ea-9497-229fd6f62503.png">
 
 ### デモサイトのIPアドレスです
 #### http://54.95.203.14/
 
 ## 📍Usage
+このアプリの機能一覧です
+- ユーザー登録機能（登録にはmailアドレスが必要です。）
+- 簡単ログイン機能（ユーザー新規登録ページよりログインできます。）
+- ユーザーログイン、ログアウト、編集機能
+- タスク投稿機能
+- タスク検索機能
+- コメント機能
+- いいね機能
+- ユーザーフォロー機能
 
 ## 📍Install
+https://github.com/hatori-r/our_task.git
 
 ## 📍Author
 - Hattori Reiya(hatori-r)： [Twitter](https://twitter.com/hariy053)　[Facebook](https://www.facebook.com/hatorir12/)　[blog](https://hatoriblog.com)
@@ -46,35 +60,61 @@ our taskはタスクを他のユーザーにシェアできるアプリケーシ
 ## users テーブル
 |Column|Type|Options|
 |------|----|-------|
-
+|email|string|null: false|
+|nickname|string|null: false|
+|profile|string||
+|site|string||
+|twitter|string||
+|facebook|string||
+|instagram|string||
+|image|text||
 ### Association
+- has_many :tasks, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :like, dependent: :destroy
+- has_many :liked_tasks, through: :likes, source: :task
+- has_many :relationships, dependent: :destroy
+- has_many :followings, through: :relationships, source: :follow
+- has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
+- has_many : followers, through: :reverse_of_relationships, source: :user
 
 ## tasks テーブル
 |Column|Type|Options|
 |------|----|-------|
-
+|task|string||
+|state|integer||
+|user_id|integer||
+|limit_date|date||
 ### Association
+- belongs_to :user
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :liked_users, through: :likes, source: :user
 
 ## comments テーブル
 |Column|Type|Options|
 |------|----|-------|
-
+|text|text||
+|user_id|integer||
+|task_id|integer||
 ### Association
+- belongs_to :user
+- belongs_to :task
 
 ## likes テーブル
 |Column|Type|Options|
 |------|----|-------|
-
+|user_id|integer|foreign_key: true|
+|task_id|integer|foreign_key: true|
 ### Association
+- belongs_to ;user
+- belongs_to ;task
 
 ## relationships テーブル
 |Column|Type|Options|
 |------|----|-------|
-
+|user|references|foreign_key: true|
+|follow|references|foreign_key: { to_table: :users }|
 ### Association
-
-## messages テーブル
-|Column|Type|Options|
-|------|----|-------|
-
-### Association
+- belongs_to :user
+- belongs_to :follow, class_name: 'User'
