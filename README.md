@@ -1,24 +1,62 @@
-# README
+# 📕 Name - our task (タスク管理・シェアアプリケーション)
+![](https://img.shields.io/badge/ruby-2.5.1-red)
+![](https://img.shields.io/badge/rails-5.2.4.3-red)
+![](https://img.shields.io/badge/mysql-5.6.47-blue)
+![](https://img.shields.io/badge/jQuery-1.12.4-blue)
+![](https://img.shields.io/badge/AWS-EC2-orange)
+![](https://img.shields.io/badge/AWS-S3-orange)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 📍Introduction
+our taskはタスクを他のユーザーにシェアできるアプリケーションです。  
 
-Things you may want to cover:
+投稿するタスクには目標達成までの期限を決めることが出来るので他のユーザーに共有して、  
+達成する意識を高めることが出来ます。  
 
-* Ruby version
+またタスクの進捗状況も設定できるので、進捗管理も行いやすくなっております。  
 
-* System dependencies
+## 📍Demo
 
-* Configuration
+## 📍Usage
 
-* Database creation
+## 📍Install
 
-* Database initialization
+## 📍Author
+- Hattori Reiya(hatori-r)： [Twitter](https://twitter.com/hariy053)　[Facebook](https://www.facebook.com/hatorir12/)　[blog](https://hatoriblog.com)
 
-* How to run the test suite
+# 📕 DB設計図
 
-* Services (job queues, cache servers, search engines, etc.)
+## users テーブル
+|Column|Type|Options|
+|------|----|-------|
 
-* Deployment instructions
+### Association
 
-* ...
+## tasks テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+## comments テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+## likes テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+## relationships テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+## messages テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
