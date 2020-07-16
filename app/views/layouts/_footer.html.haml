@@ -2,6 +2,12 @@
   Copyright
   %span.copyright © 
   2020 our task All Rights Reserved.
-  #pagetop.remove-top
-    .remove-top__btn
-      %i.far.fa-caret-square-up
+  - if user_signed_in?
+  - else
+    #appear.administrator-login
+      = link_to user_session_path, class: "administrator-login__btn" do
+        %p
+          簡単ログイン
+        %i.fas.fa-key
+  #page-top.icon-box
+    %i.fas.fa-chevron-up

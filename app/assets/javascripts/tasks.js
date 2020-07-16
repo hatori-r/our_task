@@ -50,28 +50,63 @@ $(function() {
   // -------------------------------
   
   // -----ページの先頭へボタン-----
+  // $(function() {
+  //   $('#pagetop').click(function() {
+  //     $("html, body").animate({scrollTop: 0}, "300");
+  //   });
+  //   $('#pagetop').hide();
+  //   $(window).scroll(function() {
+  //     if($(window).scrollTop() > 0) {
+  //       $('#pagetop').slideDown(600);
+  //     } else {
+  //       $('#pagetop').slideUp(600);
+  //     }
+  //   });
+  //   $("#pagetop").mouseover(function() {
+  //     $(this).animate({
+  //       bottom: "0px"
+  //     }, 300);
+  //   });
+  //   $("#pagetop").mouseover(function() {
+  //     $(this).animate({
+  //       bottom: "-60px"
+  //     }, 300);
+  //   });
+  // });
   $(function() {
-    $('#pagetop').click(function() {
-      $("html, body").animate({scrollTop: 0}, "300");
+    var topBtn = $('#page-top');    
+    topBtn.hide();
+    //スクロールが100に達したらボタン表示
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            topBtn.fadeIn("fast");
+        } else {
+            topBtn.fadeOut("fast");
+        }
     });
-    $('#pagetop').hide();
-    $(window).scroll(function() {
-      if($(window).scrollTop() > 0) {
-        $('#pagetop').slideDown(600);
-      } else {
-        $('#pagetop').slideUp(600);
-      }
+    //スクロールしてトップ
+    topBtn.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
     });
-    $("#pagetop").mouseover(function() {
-      $(this).animate({
-        bottom: "0px"
-      }, 300);
-    });
-    $("#pagetop").mouseover(function() {
-      $(this).animate({
-        bottom: "-60px"
-      }, 300);
+});
+// -------------------------------
+
+// -----かんたんログインボタン-----
+  $(function() {
+    var topBtn = $('#appear');    
+    topBtn.hide();
+    //スクロールが100に達したらボタン表示
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            topBtn.slideDown("fast");
+        } else {
+            topBtn.slideUp(500);
+        }
     });
   });
+
   // -------------------------------
 })

@@ -21,12 +21,12 @@
   .tasks-box
     .limit-box
       .limit-upper
-        .limit LIMIT
+        .limit リミット
       .limit-lower
         .limit-date= t.limit_date
     .task-box
       .task-upper
-        .task TASK
+        .task タスク
         .task-data
           .task-data-inner= simple_format(t.task)
           .created-date= t.created_at.to_s(:datetime)

@@ -4,14 +4,14 @@
     %ul
       - if user_signed_in?
         %li
-          = link_to "Share task", "/tasks/new", class: "post-task"
+          = link_to "タスクをシェア", "/tasks/new", class: "post-task"
         %li
-          = link_to "My page", "/users/#{current_user.id}", class: "my-page"
+          = link_to "マイページ", "/users/#{current_user.id}", class: "my-page"
       - else
         %li
-          = link_to "Share task / Log in", new_user_session_path, class: "post-task"
+          = link_to "ログイン", new_user_session_path, class: "post-task"
         %li
-          = link_to "Sign up", new_user_registration_path, class: "my-page"
+          = link_to "登録する", new_user_registration_path, class: "my-page"
   = form_with(url: tasks_searches_path, local: true, method: :get, class: "search-form") do |f|
     .search-inner
       = f.text_field :keyword, placeholder: "タスクを検索", class: "search-input"

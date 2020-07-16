@@ -1,6 +1,6 @@
 .contents.row
   .container
-    %h2.login Log in
+    %h2.login 続行するには our task にログインしてください
     .container__easy-login
       = link_to  new_user_registration_path, class: "easy-login-btn" do
         簡単ログイン
@@ -18,6 +18,8 @@
             %em.remember_me-label ログインを記録
             = f.check_box :remember_me, class: "remember_me"
         .actions
-          = f.submit "Log in"
+          = f.submit "ログイン"
+        .no-accounts
+          アカウントをお持ちではないでしょうか？
         .transition-signin
-          = link_to "Sign in", new_user_registration_path
+          = link_to "登録する", new_user_registration_path
