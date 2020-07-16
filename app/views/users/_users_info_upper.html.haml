@@ -42,6 +42,15 @@
                     %p
                       フォロー
                     %i.fas.fa-user-plus
+        .info-right__follow-info
+          - if user_signed_in?
+            - unless current_user == @user
+              - if current_user.followers?(@user)
+                .user-follower
+                  %i.far.fa-check-circle
+                  %p フォローされています
+              - else
+          - else
         .info-right__sns
           .twitter
             - if @user.twitter?
@@ -90,11 +99,9 @@
               %b= @user.followers.count
               人
         .info-right__profile
-          .profile
-            profile
           .introduce
             - if @user.profile?
-              = @user.profile
+              = simple_format(@user.profile)
             - else
               .nil_date
                 profile

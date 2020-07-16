@@ -33,4 +33,8 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
 
+  def followers?(other_user)
+    self.followers.include?(other_user)
+  end
+
 end
