@@ -223,15 +223,16 @@
             width: 30px;
             border-radius: 50%;
           }
-          .icon-a {
-            display: block;
-            .fa-user-circle {
-              width: 40px;
-              color: #ddd;
-              font-size: 24px;
-              text-align: center;
-              line-height: 41px;
-            }
+        }
+        .icon-a {
+          display: block;
+          .fa-user-circle {
+            height: 40px;
+            width: 40px;
+            color: #ddd;
+            font-size: 24px;
+            text-align: center;
+            line-height: 41px;
           }
         }
       }
@@ -240,22 +241,23 @@
       margin-right: auto;
       margin-left: 0;
       display: flex;
-        &__users-info {
-          height: 40px;
-          display: flex;
-          .image-a {
+      &__users-info {
+        height: 40px;
+        display: flex;
+        .image-a {
+          display: block;
+          padding: 5px;
+          .user-icon {
             display: block;
-            padding: 5px;
-            .user-icon {
-              display: block;
-              height: 30px;
-              width: 30px;
-              border-radius: 50%;
-            }
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+          }
           }
           .icon-a {
             display: block;
             .fa-user-circle {
+              height: 40px;
               width: 40px;
               color: #ddd;
               font-size: 24px;
