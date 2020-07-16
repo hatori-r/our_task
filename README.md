@@ -16,6 +16,24 @@ our taskはタスクを他のユーザーにシェアできるアプリケーシ
 
 ## 📍Demo
 
+### トップページ
+#### 未ログイン時
+<img width="1680" alt="toppage" src="https://user-images.githubusercontent.com/63530890/87650755-1f707000-c78d-11ea-8a02-b10379da0f95.png">
+
+#### ログイン時
+<img width="1680" alt="login-toppage" src="https://user-images.githubusercontent.com/63530890/87650809-357e3080-c78d-11ea-8f71-a3a85921457b.png">
+
+### タスクの投稿
+<img width="1680" alt="post-task" src="https://user-images.githubusercontent.com/63530890/87651698-2f3c8400-c78e-11ea-904c-359cd7b0a347.png">
+
+### タスクへのコメント
+### タスクへのいいね
+### ユーザーフォロー
+
+
+### デモサイトのIPアドレスです
+#### http://54.95.203.14/
+
 ## 📍Usage
 
 ## 📍Install
