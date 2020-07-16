@@ -20,21 +20,32 @@ our taskはタスクを他のユーザーにシェアできるアプリケーシ
 
 ### トップページ
 #### 未ログイン時
+- 未ログイン時でも画面を下にスクロールしていただくと投稿一覧を見ることが出来ます。
+
 <img width="1680" alt="toppage" src="https://user-images.githubusercontent.com/63530890/87650755-1f707000-c78d-11ea-8a02-b10379da0f95.png">
 
 #### ログイン時
+- ユーザーの投稿一覧を見ることが出来ます。
+
 <img width="1680" alt="login-toppage" src="https://user-images.githubusercontent.com/63530890/87650809-357e3080-c78d-11ea-8f71-a3a85921457b.png">
 
 ### タスクの投稿
+- 投稿の個別ページです。
+
 <img width="1680" alt="post-task" src="https://user-images.githubusercontent.com/63530890/87651698-2f3c8400-c78e-11ea-904c-359cd7b0a347.png">
 
 ### タスクへのコメント
+- 投稿の個別ページで投稿にコメントすることが出来ます。
 <img width="1680" alt="a-comment" src="https://user-images.githubusercontent.com/63530890/87653932-3618c600-c791-11ea-88ce-c76924d7624b.png">
 
 ### タスクへのいいね
+- 投稿の個別ページで投稿にいいねをすることが出来ます。
+
 <img width="1680" alt="like-task" src="https://user-images.githubusercontent.com/63530890/87654095-68c2be80-c791-11ea-95c7-6ea9c96563b0.png">
 
 ### ユーザーフォロー
+- 各ユーザーをフォローすることが出来ます。
+
 <img width="1680" alt="follow" src="https://user-images.githubusercontent.com/63530890/87654405-cfe07300-c791-11ea-9497-229fd6f62503.png">
 
 ### デモサイトのIPアドレスです
