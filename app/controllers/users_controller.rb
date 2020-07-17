@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :following, :followers]
+  before_action :check_guest, only: [:update, :destroy]
 
   def index
   end
@@ -24,12 +25,6 @@ class UsersController < ApplicationController
   end
   
   def show
-    # @nickname = @user.nickname
-    # @profile = @user.profile
-    # @twitter = @user.twitter
-    # @facebook = @user.facebook
-    # @instagram = @user.instagram
-    # @site = @user.site
     @image = @user.image
     @tasks = @user.tasks.order("created_at DESC").page(params[:page]).per(10)
   end
@@ -47,6 +42,13 @@ class UsersController < ApplicationController
   
   def set_user
     @user = User.find(params[:id])
+  end
+  
+  def check_guest
+    if params[:user][:email].downcase == 'guest@example.com'
+      redirect_to user_path(current_user), method: :get
+      flash[:guest_alert] = 'ゲストユーザーの変更・削除はできません。'
+    end
   end
 
   def user_params

@@ -201,3 +201,25 @@
     transition: background 0.1s;
     }
 }
+
+.guest_alert {
+  background: #ccc;
+  height: 60px;
+  width: 100%;
+  border: 1px solid #bbb;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-size: 22px;
+  text-shadow: 1px 1px 5px #5c5c5c;
+  color: #f5f5f5;
+  font-family: "M PLUS Rounded 1c";
+  cursor: pointer;
+  position: fixed;
+  z-index: 1;
+  transition: background 0.1s;
+  &:hover {
+    background: #bbb;
+    transition: background 0.1s;
+    }
+}

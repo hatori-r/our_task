@@ -14,6 +14,14 @@ $(function() {
   }, 5000);
 });
 // -------------------------------
+  // -----flash_message(guest)-----
+  // クリックで発火
+  $(function() {
+    $('.guest_alert').click(function() {
+      $('.guest_alert').slideUp(500);
+    });
+  });
+// -------------------------------
 
   $(function() {
     $(".tab a").click(function() {
