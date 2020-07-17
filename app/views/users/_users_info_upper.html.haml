@@ -3,7 +3,7 @@
     .user-info__left
       .profile-image
         - if @user.image?
-          = image_tag @user.image.url, style: "height: 230px; width: 230px; border-radius: 50%;"
+          = image_tag @user.image.url
         - else
           %i.far.fa-user-circle
     .user-info__center

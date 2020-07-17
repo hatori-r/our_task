@@ -26,6 +26,11 @@
           margin-top: 70px;
           display: grid;
           place-items: center;
+          img {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+          }
           i {
             height: 100%;
             width: 100%;
