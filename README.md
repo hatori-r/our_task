@@ -1,5 +1,12 @@
+\
+\
+\
 ![our_task_readme_banner](https://user-images.githubusercontent.com/63530890/87664425-2f457f80-c7a0-11ea-99c4-7ac8ee2dc291.png)
-
+<br>
+<br>
+<br>
+<br>
+<br>
 # 📕 Name - our task (タスク管理・シェアアプリケーション)
 ![](https://img.shields.io/badge/ruby-2.5.1-red)
 ![](https://img.shields.io/badge/rails-5.2.4.3-red)
