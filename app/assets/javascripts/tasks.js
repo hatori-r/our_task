@@ -71,7 +71,7 @@ $(function() {
 });
 $(function() {
   $("#page-top").hover(function() {
-    $("#slide-text").slideToggle(300);
+    $("#slide-text").slideToggle("fast");
   });
 });
 // -------------------------------
@@ -87,6 +87,16 @@ $(function() {
         } else {
             topBtn.fadeOut("fast");
         }
+    });
+  });
+  $(function() {
+    $("#appear-share-task").hover(function() {
+      sethover = setTimeout(function() {
+        $("#appear-info").fadeIn("fast")
+      },1000);
+    }, function() {
+      $("#appear-info").fadeOut("fast")
+      clearTimeout(sethover);
     });
   });
   // -------------------------------

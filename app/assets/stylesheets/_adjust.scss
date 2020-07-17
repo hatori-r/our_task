@@ -223,6 +223,25 @@ footer {
   }
 }
 
+.appear-info {
+  display: none;
+  background: #1dd7ff;
+  width: 160px;
+  position: fixed;
+  bottom: 22%;
+  right: 120px;
+  border-radius: 50px;
+  box-shadow: 0 0 2px #ddd;
+  &__text {
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    font-family: "M PLUS Rounded 1c","メイリオ";
+    line-height: 40px;
+    letter-spacing: 0.05em;
+  }
+}
+
 .appear-share-task {
   height: 80px;
   width: 80px;
