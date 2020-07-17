@@ -7,7 +7,7 @@
     display: none;
   }
   aside {
-    width: 25%;
+    width:30%;
     display: flex;
     flex-direction: column;
     border-right: 1px solid #ccc;
@@ -135,8 +135,13 @@
   .contents {
     padding-bottom: 80px;
   }
-  .our-task {
+  .our-task,
+  footer {
     display: none;
+  }
+  .pagination,
+  .top-page {
+    margin-bottom: 80px;
   }
   .our-task-icon {
     display: block;
@@ -149,7 +154,7 @@
     }
     aside {
       position: fixed;
-      left: -250px;
+      left: -255px;
       height: 100%;
       transition:  all 0.2s;
       background: #fff;

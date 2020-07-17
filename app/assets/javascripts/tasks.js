@@ -93,7 +93,7 @@ $(function() {
     $("#appear-share-task").hover(function() {
       sethover = setTimeout(function() {
         $("#appear-info").fadeIn("fast")
-      },1000);
+      },500);
     }, function() {
       $("#appear-info").fadeOut("fast")
       clearTimeout(sethover);
