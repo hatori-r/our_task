@@ -76,6 +76,21 @@ $(function() {
 });
 // -------------------------------
 
+// -----タスク投稿ボタン-----
+  $(function() {
+    var topBtn = $('#appear-share-task');    
+    topBtn.hide();
+    //スクロールが100に達したらボタン表示
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            topBtn.fadeIn("fast");
+        } else {
+            topBtn.fadeOut("fast");
+        }
+    });
+  });
+  // -------------------------------
+
 // -----かんたんログインボタン-----
   $(function() {
     var topBtn = $('#appear');    
@@ -89,6 +104,5 @@ $(function() {
         }
     });
   });
-
   // -------------------------------
 })

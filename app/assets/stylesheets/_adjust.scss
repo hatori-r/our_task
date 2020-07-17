@@ -223,6 +223,37 @@ footer {
   }
 }
 
+.appear-share-task {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20%;
+  right: 33px;
+  &__btn {
+    background: #fff;
+    display: block;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #ccc;
+    transition: all 0.1s;
+    &:hover {
+      box-shadow: 0 0 10px #ccc;
+      transition: all 0.2s;
+    }
+    .fa-share-alt {
+      height: 80px;
+      width: 80px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 40px;
+      color: #1dd7ff;
+    }
+  }
+}
+
 .icon-box {
   background: #3498db;
   height: 70px;

@@ -3,6 +3,9 @@
   %span.copyright © 
   2020 our task All Rights Reserved.
   - if user_signed_in?
+    #appear-share-task.appear-share-task
+      = link_to new_task_path, class: "appear-share-task__btn" do
+        %i.fas.fa-share-alt
   - else
     #appear.administrator-login
       = link_to users_guest_sign_in_path, method: :post, data: { confirm: 'ゲストユーザーとしてログインしますか？' }, class: "administrator-login__btn" do
