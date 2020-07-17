@@ -73,7 +73,7 @@
         .counts
           = @task.comments.size
 
-    .container
+    .container.comments-container
       - if current_user
         = form_with(model: [@task, @comment], local: true) do |f|
           = f.text_field :text, placeholder: "コメントを入力", rows: "2", class: "container__text-area", required: ""
@@ -127,4 +127,4 @@
                       = link_to task_comment_path(task_id: @task, id: c.id), method: :delete, data: { confirm: '本当に削除しますか？' } do
                         削除
     .top-page
-      = link_to "TOP", "/", class: "return-top"
+      = link_to "トップページ", "/", class: "return-top"
