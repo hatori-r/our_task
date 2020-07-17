@@ -18,7 +18,7 @@
       - if @user.tasks.size == 0
         .task-zero
           %p
-            投稿がありません
+            タスクがありません
           %i.fas.fa-tasks
         - if user_signed_in? && @user == current_user
           .post-task

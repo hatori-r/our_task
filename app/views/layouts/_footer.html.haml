@@ -5,9 +5,11 @@
   - if user_signed_in?
   - else
     #appear.administrator-login
-      = link_to user_session_path, class: "administrator-login__btn" do
+      = link_to users_guest_sign_in_path, method: :post, data: { confirm: 'ゲストユーザーとしてログインしますか？' }, class: "administrator-login__btn" do
         %p
           簡単ログイン
         %i.fas.fa-key
   #page-top.icon-box
+    %p#slide-text
+      TOP
     %i.fas.fa-chevron-up

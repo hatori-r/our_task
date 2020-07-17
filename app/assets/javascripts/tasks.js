@@ -50,29 +50,6 @@ $(function() {
   // -------------------------------
   
   // -----ページの先頭へボタン-----
-  // $(function() {
-  //   $('#pagetop').click(function() {
-  //     $("html, body").animate({scrollTop: 0}, "300");
-  //   });
-  //   $('#pagetop').hide();
-  //   $(window).scroll(function() {
-  //     if($(window).scrollTop() > 0) {
-  //       $('#pagetop').slideDown(600);
-  //     } else {
-  //       $('#pagetop').slideUp(600);
-  //     }
-  //   });
-  //   $("#pagetop").mouseover(function() {
-  //     $(this).animate({
-  //       bottom: "0px"
-  //     }, 300);
-  //   });
-  //   $("#pagetop").mouseover(function() {
-  //     $(this).animate({
-  //       bottom: "-60px"
-  //     }, 300);
-  //   });
-  // });
   $(function() {
     var topBtn = $('#page-top');    
     topBtn.hide();
@@ -91,6 +68,11 @@ $(function() {
         }, 500);
         return false;
     });
+});
+$(function() {
+  $("#page-top").hover(function() {
+    $("#slide-text").slideToggle(300);
+  });
 });
 // -------------------------------
 

@@ -2,7 +2,7 @@
   .container
     %h2.login 続行するには our task にログインしてください
     .container__easy-login
-      = link_to  new_user_registration_path, class: "easy-login-btn" do
+      = link_to  = link_to users_guest_sign_in_path, method: :post, class: "easy-login-btn" do
         簡単ログイン
         %i.fas.fa-sign-in-alt
     .container__inner
