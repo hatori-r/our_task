@@ -29,6 +29,32 @@
         .task タスク
         .task-data
           .task-data-inner= simple_format(t.task)
+          .notification
+            .notification__likes
+              - if t.likes.size == 0
+              - else
+                - if user_signed_in?
+                  - if current_user.already_liked?(t)
+                    = link_to task_like_path(id: t.id, task_id: t.id), method: :delete do
+                      %i.far.fa-thumbs-up
+                      %p.count= t.likes.size
+                  - else
+                    = link_to task_likes_path(id: t.id, task_id: t.id), method: :post do
+                      %i.far.fa-thumbs-up
+                      %p.count= t.likes.size
+                - else
+                  = link_to new_user_session_path do
+                    %i.far.fa-thumbs-up
+                    %p.count= t.likes.size
+            .notification__comments
+              - if t.comments.size == 0
+              - else
+                = link_to "/tasks/#{t.id}" do
+                  %i.far.fa-comment-dots
+                  - if t.comments.size <= 99
+                    %p.count= t.comments.size
+                  - else
+                    %p.count +99
           .created-date= t.created_at.to_s(:datetime)
           - if user_signed_in? && current_user.id == t.user.id
             .status-table
@@ -68,4 +94,11 @@
         - else
           %a(href="/tasks/#{t.id}")
             %i.far.fa-comment-dots.a-comments
+            .notification-circle
+              - if t.comments.size <= 9
+                .notification-circle__count
+                  = t.comments.size
+              - else
+                .notification-circle__dots
+                  ・
     .adjustment-box
