@@ -38,6 +38,6 @@
       - else
         - @likes.each do |like|
           = render partial: "users/like_tasks", locals: { like: like }
-        = paginate(@tasks)
+        = paginate(@likes)
     .top-page
       = link_to "トップページ", "/", class: "return-top"

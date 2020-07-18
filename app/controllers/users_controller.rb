@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def show
     @image = @user.image
     @tasks = @user.tasks.order("created_at DESC").page(params[:page]).per(10)
-    @likes = Like.where(user_id: @user.id)
+    @likes = Like.where(user_id: @user.id).order("created_at DESC").page(params[:page]).per(10)
   end
   
   def destroy
