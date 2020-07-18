@@ -177,10 +177,67 @@ body {
 }
 
 .pagination {
+  height: 60px;
   text-align: center;
   margin-bottom: 20px;
   span {
-    font-size: 20px;
+    background: #fff;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 3px;
+    margin-top: 5px;
+    line-height: 50px;
+    font-size: 18px;
+    font-family: "M PLUS Rounded 1c";
+    a {
+      height: 100%;
+      width: 100%;
+      display: block;
+      line-height: 50px;
+      font-size: 16px;
+      color: #555;
+      font-family: "M PLUS Rounded 1c";
+    }
+  }
+  .first {
+    width: 60px;
+    border: 1px solid #ddd;
+    &:hover {
+      background: #f3f3f3;
+    }
+  }
+  .prev {
+    border: 1px solid #ddd;
+    &:hover {
+      background: #f3f3f3;
+    }
+  }
+  .page {
+    border: 1px solid #ddd;
+    &:hover {
+      background: #f3f3f3;
+    }
+  }
+  .next {
+    border: 1px solid #ddd;
+    &:hover {
+      background: #f3f3f3;
+    }
+  }
+  .last {
+    width: 60px;
+    border: 1px solid #ddd;  
+    &:hover {
+      background: #f3f3f3;
+    }
+  }
+  .current {
+    background: #3498db;
+    color: #fff;
+    &:hover {
+      background: #3498db;
+    }
   }
 }
 
