@@ -94,11 +94,13 @@
         - else
           %a(href="/tasks/#{t.id}")
             %i.far.fa-comment-dots.a-comments
-            .notification-circle
-              - if t.comments.size <= 9
-                .notification-circle__count
-                  = t.comments.size
-              - else
-                .notification-circle__dots
-                  ・
+            - if user_signed_in? && current_user.id == t.user.id
+              .notification-circle
+                - if t.comments.size <= 9
+                  .notification-circle__count
+                    = t.comments.size
+                - else
+                  .notification-circle__dots
+                    ・
+            - else
     .adjustment-box
