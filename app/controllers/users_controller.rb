@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :check_guest, only: [:update, :destroy]
 
   def index
+    @users = User.all
   end
 
   def new
@@ -28,6 +29,24 @@ class UsersController < ApplicationController
     @image = @user.image
     @tasks = @user.tasks.order("created_at DESC").page(params[:page]).per(10)
     @likes = Like.where(user_id: @user.id).order("created_at DESC").page(params[:page]).per(10)
+    @currentUserEntry = Entry.where(user_id: current_user.id)
+    @userEntry = Entry.where(user_id: @user.id)
+    if @user.id == current_user.id
+    else
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          if cu.room_id == u.room_id then
+            @isRoom = true
+            @roomId = cu.room.id
+          end
+        end
+      end
+      if @isRoom
+      else
+        @room = Room.new
+        @entry = Entry.new
+      end
+    end
   end
   
   def destroy
