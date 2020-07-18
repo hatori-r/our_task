@@ -1,6 +1,7 @@
 .follow-list {
   background: #fff;
   height: 100%;
+  min-height: 105px;
   padding: 50px 60px;
   border-radius: 7px;
   border: 1px solid #eee;
@@ -17,6 +18,7 @@
       height: 100%;
       font-weight: bold;
       font-size: 20px;
+      font-family: "M PLUS Rounded 1c","メイリオ",Meiryo,sans-serif;
       color: #777;
     }
     .fa-users {
@@ -281,22 +283,22 @@
   display: block;
 }
 
-.like-zero {
-  height: 100px;
-  width: 100%;
-  padding-top: 20px;
-  display: flex;
-  justify-content: center;
-  line-height: 100px;
-  p {
-    font-weight: bold;
-    font-size: 20px;
-  }
-  .fa-tasks {
-    width: 50px;
-    margin: 0;
-    line-height: 100px;
-    text-align: center;
-    font-size: 24px;
-  }
-}
+// .like-zero {
+//   height: 100px;
+//   width: 100%;
+//   padding-top: 20px;
+//   display: flex;
+//   justify-content: center;
+//   line-height: 100px;
+//   p {
+//     font-weight: bold;
+//     font-size: 20px;
+//   }
+//   .fa-tasks {
+//     width: 50px;
+//     margin: 0;
+//     line-height: 100px;
+//     text-align: center;
+//     font-size: 24px;
+//   }
+// }

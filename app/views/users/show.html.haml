@@ -33,6 +33,11 @@
           %p
             いいねしたタスクはありません
           %i.fas.fa-tasks
+        .watching-tasks
+          = link_to "タスクを見に行く", root_path, class: "watching-tasks__btn"
       - else
+        - @likes.each do |like|
+          = render partial: "users/like_tasks", locals: { like: like }
+        = paginate(@tasks)
     .top-page
       = link_to "トップページ", "/", class: "return-top"
