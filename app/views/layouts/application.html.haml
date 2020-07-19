@@ -17,17 +17,18 @@
       .btn_area
         .btn_area__top
           %h1
-            はじめてのログイン
+            ようこそ！
           %p
-            あらためて、our taskへようこそ
+            our taskではあなたのタスクをシェアできます。
             %br/
-            まずはじめにみんなにタスクをシェアしてみましょう！
+            %br/
+            登録をしてみんなにタスクをシェアしてみましょう！
         .btn_area__mid
           = image_tag asset_path("/images/share_task.png"), style: "height: 220px; width: 260px;", class: "share_task"
           
         .btn_area__low
-          = link_to "taskをシェアしてみる", "/tasks/new", class: "first-task"
-          %button TOPへ
+          -# = link_to "our taskを始める", new_user_registration_path, class: "first-task"
+          %button 閉じる
     = render "layouts/title_ber"
     = render "layouts/notification"
     = yield
