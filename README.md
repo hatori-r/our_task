@@ -2,6 +2,7 @@
 \
 \
 ![our_task_readme_banner](https://user-images.githubusercontent.com/63530890/87664425-2f457f80-c7a0-11ea-99c4-7ac8ee2dc291.png)
+## http://ourtask.tokyo/
 <br>
 <br>
 <br>
@@ -55,8 +56,8 @@ our taskはタスクを他のユーザーにシェアできるアプリケーシ
 
 <img width="1680" alt="follow" src="https://user-images.githubusercontent.com/63530890/87654405-cfe07300-c791-11ea-9497-229fd6f62503.png">
 
-### デモサイトのIPアドレスです
-#### http://54.95.203.14/
+### アドレスです
+#### http://ourtask.tokyo/
 
 ## 📍Usage
 このアプリの機能一覧です
