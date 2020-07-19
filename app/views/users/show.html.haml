@@ -41,3 +41,7 @@
         = paginate(@likes)
     .top-page
       = link_to "トップページ", "/", class: "return-top"
+
+
+= link_to "メッセージ", message_path(@user), method: :get
+= link_to "メッセージ", messages_path, method: :get
