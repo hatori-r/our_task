@@ -327,7 +327,6 @@
                 &:hover {
                   box-shadow: 0 0 15px 2px #d4d4d4;
                   transition: all 0.2s;
-                  cursor: default;
                 }
               }
             }
@@ -350,6 +349,18 @@
       height: 100%;
       width: 50px;
       padding-top: 5px;
+      position: relative;
+      .check-good {
+        height: 50px;
+        width: 116px;
+        position: absolute;
+        left: -117px;
+        font-size: 13px;
+        color: #777;
+        font-weight: bold;
+        line-height: 50px;
+        text-align: center;
+      }
       .like-orange {
         .fa-thumbs-up {
           height: 100%;

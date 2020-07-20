@@ -205,7 +205,9 @@
       }
       &__owner-info {
         height: 40px;
+        min-width: 100px;
         display: flex;
+        position: relative;
         .user-name {
           display: block;
           height: 40px;
@@ -235,6 +237,15 @@
             line-height: 41px;
           }
         }
+        .post-date {
+          height: 14.5px;
+          width: 100px;
+          position: absolute;
+          left: 0;
+          bottom: -15.5px;
+          font-size: 12px;
+          line-height: 16px;
+        }
       }
     }
     .other-user {
@@ -243,7 +254,9 @@
       display: flex;
       &__users-info {
         height: 40px;
+        min-width: 100px;
         display: flex;
+        position: relative;
         .image-a {
           display: block;
           padding: 5px;
@@ -253,26 +266,35 @@
             width: 30px;
             border-radius: 50%;
           }
-          }
-          .icon-a {
-            display: block;
-            .fa-user-circle {
-              height: 40px;
-              width: 40px;
-              color: #ddd;
-              font-size: 24px;
-              text-align: center;
-              line-height: 40px;
-            }
-          }
-          .user-name {
-            display: block;
+        }
+        .icon-a {
+          display: block;
+          .fa-user-circle {
             height: 40px;
-            padding: 0 10px;
-            font-size: 16px;
-            letter-spacing: 0.05em;
+            width: 40px;
+            color: #ddd;
+            font-size: 24px;
+            text-align: center;
             line-height: 40px;
           }
+        }
+        .user-name {
+          display: block;
+          height: 40px;
+          padding: 0 10px;
+          font-size: 16px;
+          letter-spacing: 0.05em;
+          line-height: 40px;
+        }
+        .post-date {
+          height: 14.5px;
+          width: 100px;
+          position: absolute;
+          right: 0;
+          bottom: -15.5px;
+          font-size: 12px;
+          line-height: 16px;
+        }
         }
         &__users-comment {
           height: 40px;

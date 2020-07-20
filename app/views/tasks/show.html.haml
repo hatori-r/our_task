@@ -109,6 +109,7 @@
                   - else
                     = link_to "/users/#{c.user.id}", class: "icon-a" do
                       %i.far.fa-user-circle
+                  .post-date= c.created_at.to_s(:datetime)
             - else
               .other-user
                 .other-user__users-info
@@ -119,6 +120,7 @@
                     = link_to "/users/#{c.user.id}", class: "icon-a" do
                       %i.far.fa-user-circle
                   = link_to c.user.nickname, "/users/#{c.user_id}", class: "user-name"
+                  .post-date= c.created_at.to_s(:datetime)
                 .other-user__users-comment
                   .a-comment
                     = c.text
