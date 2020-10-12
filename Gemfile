@@ -50,6 +50,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -71,35 +72,19 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 gem 'pry-rails'
-
 gem 'compass-rails', '3.1.0'
-
 gem 'sprockets', '3.7.2'
-
 gem 'haml-rails'
-
 gem 'erb2haml'
-
 gem 'font-awesome-sass'
-
 gem 'devise'
-
 # gem 'webpacker', github: 'rails/webpacker'
-
 gem 'kaminari'
-
 gem 'jquery-rails'
-
 gem 'rails-i18n', '~> 5.1'
-
 gem 'devise-i18n'
-
 gem 'devise-i18n-views'
-
 gem 'carrierwave'
-
 gem 'mini_magick'
-
 gem 'fog-aws'
